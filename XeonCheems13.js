@@ -6048,6 +6048,12 @@ break
             let member = participants.map(u => u.id)
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
+            let ps = groupMetadata.participants.map(v => v.id);
+            do {
+              jodoh= ps[Math.floor(Math.random() * ps.length)]
+              } while (jodoh==me);
+
+              
 XeonBotInc.sendMessage(m.chat,
 { text: `👫Your Soulmate Is
 
@@ -6068,23 +6074,13 @@ isForwarded: true,
 { quoted: m})        
             }
             break
-            case 'couple': case 'vatar': case 'vatari': {
-            if (!m.isGroup) return XeonStickGroup()
-                if (!m.isGroup) return XeonStickGroup()
-                let member = participants.map(u => u.id)
-                let orang = member[Math.floor(Math.random() * member.length)]
-                let jodoh = member[Math.floor(Math.random() * member.length)]
-                let me = m.sender
-                me!=jodoh!=orang
-               let xyz = `Our new Couples are 
-@${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]}
-He he he, কি রে শালা, খবর কি তোদের?😜😁👀
-              
-> _Checked by @${me.split('@')[0]}_ `
+
+            case 'congratulations': 
+              let reply  = `Biye ta kor taratari🎷🎺`
+        
 XeonBotInc.sendMessage(m.chat,
-  { text : xyz,
-contextInfo:{
-  mentionedJid:[orang, jodoh,me],
+  { text: reply,
+  contextInfo:{
   forwardingScore: 9999999,
   isForwarded: true, 
   "externalAdReply": {
@@ -6097,6 +6093,92 @@ contextInfo:{
   "thumbnail": fs.readFileSync(`./XeonMedia/theme/cheemspic.jpg`),
   "sourceUrl": `${websitex}`}}},
   { quoted: m})        
+              
+              break
+
+            case 'couple': case 'vatar': case 'vatari': {
+            if (!m.isGroup) return XeonStickGroup()
+                if (!m.isGroup) return XeonStickGroup()
+                let member = participants.map(u => u.id)
+                let orang = member[Math.floor(Math.random() * member.length)]
+                let jodoh = member[Math.floor(Math.random() * member.length)]
+                let me = m.sender
+                let ps = groupMetadata.participants.map(v => v.id);
+
+                do {
+                  jodoh= ps[Math.floor(Math.random() * ps.length)]
+                  } while (jodoh==orang);
+                do {
+                    jodoh= ps[Math.floor(Math.random() * ps.length)]
+                  } while (jodoh==me);
+
+                do {
+                    orang= ps[Math.floor(Math.random() * ps.length)]
+                  } while (me==orang);
+
+                  
+               let xyz = `
+❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️
+  গ্রুপের নতুন বর - বৌ 😘
+
+    👉 @${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]} 👈
+
+He he he, কি রে শালা, খবর কি তোদের?😜😁👀
+❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️`
+              
+ let downmsg = `> _Checked by @${me.split('@')[0]}_ `
+let msg = generateWAMessageFromContent(from, {
+  viewOnceMessage: {
+    message: {
+        "messageContextInfo": {
+          "deviceListMetadata": {},
+          "deviceListMetadataVersion": 2
+        },
+        interactiveMessage: proto.Message.InteractiveMessage.create({
+          body: proto.Message.InteractiveMessage.Body.create({
+            text: xyz
+          }),
+          footer: proto.Message.InteractiveMessage.Footer.create({
+            text: downmsg
+          }),
+          header: proto.Message.InteractiveMessage.Header.create({
+                  title: ``,
+                  gifPlayback: true,
+                  subtitle: ownername,
+                  hasMediaAttachment: false  
+                }),
+          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+            buttons: [
+              {
+                "name": "quick_reply",
+                "buttonParamsJson": `{"display_text":"Congratulations 🥳","id":"Biye ta kor taratri🎷🎺"}`
+              },
+              {
+                "name": "quick_reply",
+                "buttonParamsJson": `{"display_text":" Try Again","id":"${prefix}couple"}`
+              }
+           ],
+           
+  }),
+  contextInfo: {
+    mentionedJid: [orang,jodoh,me], 
+    forwardingScore: 999,
+    isForwarded: true,
+  forwardedNewsletterMessageInfo: {
+    newsletterJid: '120363222395675670@newsletter',
+    newsletterName: ownername,
+    serverMessageId: 143
+  }
+  }
+          
+        })
+    }
+  }
+}, {})
+await XeonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
+  messageId: msg.key.id
+})
+
               }
 
 
@@ -10435,34 +10517,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -10582,30 +10660,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -10791,34 +10869,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -10938,30 +11012,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -11147,34 +11221,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -11294,30 +11364,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -11503,34 +11573,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -11650,30 +11716,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -11859,34 +11925,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -12006,30 +12068,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -12215,34 +12277,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -12362,30 +12420,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -12571,34 +12629,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -12911,34 +12965,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -13058,30 +13108,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -13267,34 +13317,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -13414,30 +13460,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -13623,34 +13669,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -13770,30 +13812,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -13979,34 +14021,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -14126,30 +14164,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -14335,34 +14373,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -14482,30 +14516,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -14691,34 +14725,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -14838,30 +14868,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -15047,34 +15077,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -15194,30 +15220,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -15403,34 +15429,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -15550,30 +15572,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -15759,34 +15781,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -15906,30 +15924,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -16115,34 +16133,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -16262,30 +16276,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -16471,34 +16485,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -16618,30 +16628,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -16827,34 +16837,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -16974,30 +16980,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -17183,34 +17189,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -17330,30 +17332,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -17539,34 +17541,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -17686,30 +17684,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
@@ -17895,34 +17893,30 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-  "name": "quick_reply",
-  "buttonParamsJson": `{"display_text":"Allmenu 🗂️","id":"${prefix}allmenu"}`
-   },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           })
         })
@@ -18042,30 +18036,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"YouTube 🌹\",\"url\":\"https://youtube.com/@DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"Telegram 💧\",\"url\":\"https://t.me/xeonbotinc\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/DGXeon\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                 "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20\",\"merchant_url\":\"https://www.google.com\"}"
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
-              },
-              {
-                "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-              }
+               {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+                "name": "cta_url",
+                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+             },
+             {
+               "name": "quick_reply",
+               "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+             }
            ],
           }),
           contextInfo: {
