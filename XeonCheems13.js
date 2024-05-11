@@ -1286,7 +1286,7 @@ XeonBotInc.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/$
         if (XeonTheCreator || isAdmins || !isBotAdmins){		  
         } else {
           replygcxeon(`\`\`\`「 Sticker Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-sticker for this group`)
-    return XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+    return XeonBotInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.participant }})
         }
     }
   }
@@ -1830,6 +1830,7 @@ XeonBotInc.sendMessage(m.chat,
       case 'teddy':
           await teddy()
           break
+      
   case 'family': case 'fm' : {
       if (!m.isGroup) return XeonStickGroup()
       function getRandomPercentage() {
@@ -1949,6 +1950,26 @@ XeonBotInc.sendMessage(m.chat,
       })
    }
   break
+  case 'fl':{
+    if (!text) return replygcxeon(`Example: ${prefix + command} message|sender|reply`)
+      if (!/|/.test(text)) return replygcxeon(`The data you provided is invalid!, Example: \n ${prefix + command} message|sender|reply`)
+        let message = q.split("|")[0]
+        let sndr = q.split("|")[1]
+
+        let tagsender = sndr.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+        let blockwwww = m.sndr ? m.sndr.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+
+        let reply = q.split("|")[2]
+
+        let fakereply = { key: { fromMe: false, participant: `${blockwwww}`, remoteJid: '0@s.whatsapp.net' }, message: {extendedTextMessage: { text: message}}}
+
+
+        XeonBotInc.sendMessage(m.chat, {
+          text: tagsender,
+        },{quoted:fakereply})
+
+  }
+    break
   case 'familymembers': case 'family2' : {
       if (!m.isGroup) return XeonStickGroup()
       function getRandomPercentage() {
@@ -6103,6 +6124,7 @@ XeonBotInc.sendMessage(m.chat,
                 let orang = member[Math.floor(Math.random() * member.length)]
                 let jodoh = member[Math.floor(Math.random() * member.length)]
                 let me = m.sender
+                
                 let ps = groupMetadata.participants.map(v => v.id);
 
                 do {
@@ -6118,13 +6140,13 @@ XeonBotInc.sendMessage(m.chat,
 
                   
                let xyz = `
-❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️
+❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️
   গ্রুপের নতুন বর - বৌ 😘
 
     👉 @${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]} 👈
 
 He he he, কি রে শালা, খবর কি তোদের?😜😁👀
-❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️`
+❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  `
               
  let downmsg = `> _Checked by @${me.split('@')[0]}_ `
 let msg = generateWAMessageFromContent(from, {
@@ -6174,7 +6196,7 @@ let msg = generateWAMessageFromContent(from, {
         })
     }
   }
-}, {})
+}, {quoted : m})
 await XeonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
 })
@@ -10209,6 +10231,13 @@ let msg = generateWAMessageFromContent(m.chat, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
+          let user=m.sender
+          let username =XeonBotInc.getName(user)
+          let qtmsg = `hello ${username}\nhere is the MENU`
+  
+         
+          let mquote = { key: { fromMe: false, participant: `${m.sender}`, remoteJid: '0@s.whatsapp.net' }, message: {extendedTextMessage: { text: qtmsg}}}
+
         	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
     message: {
@@ -10334,7 +10363,7 @@ let msg = generateWAMessageFromContent(m.chat, {
              }
            ],
           }),
-          contextInfo: {
+          contextInfo: {  
                   mentionedJid: [m.sender], 
                   forwardingScore: 999,
                   isForwarded: true,
@@ -10347,11 +10376,13 @@ let msg = generateWAMessageFromContent(m.chat, {
         })
     }
   }
-}, {})
+},{
+  quoted: mquote,
+})
 
 await XeonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
   messageId: msg.key.id
-})
+}, )
 }
 }
 break

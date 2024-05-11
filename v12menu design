@@ -1,0 +1,47 @@
+let msg = generateWAMessageFromContent(from, {
+                viewOnceMessage: {
+                  message: {
+                      "messageContextInfo": {
+                        "deviceListMetadata": {},
+                        "deviceListMetadataVersion": 2
+                      },
+                      interactiveMessage: proto.Message.InteractiveMessage.create({
+                        body: proto.Message.InteractiveMessage.Body.create({
+                          text: reply
+                        }),
+                        footer: proto.Message.InteractiveMessage.Footer.create({
+                          text: botname
+                        }),
+                        header: proto.Message.InteractiveMessage.Header.create({
+                                title: ``,
+                                gifPlayback: true,
+                                subtitle: ownername,
+                                hasMediaAttachment: false  
+                              }),
+                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+                          buttons: [
+                            {
+                              "name": "quick_reply",
+                              "buttonParamsJson": `{"display_text":"Congratulations 🥳","id":"Biye ta kor taratri🎷🎺"}`
+                            }
+                         ],
+                         
+                }),
+                contextInfo: {
+                  mentionedJid: [orang,jodoh,me], 
+                  forwardingScore: 999,
+                  isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                  newsletterJid: '120363222395675670@newsletter',
+                  newsletterName: ownername,
+                  serverMessageId: 143
+                }
+                }
+                        
+                      })
+                  }
+                }
+              }, {})
+              await XeonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
+                messageId: msg.key.id
+              })
