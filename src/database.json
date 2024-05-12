@@ -1,12 +1,4 @@
 {
-  "sticker": {},
-  "database": {},
-  "game": {
-    "math": []
-  },
-  "others": {
-    "vote": []
-  },
   "users": {
     "919366316018@s.whatsapp.net": {
       "serialNumber": "5748ef2731f9b0ab993964d915670166",
@@ -477,7 +469,7 @@
       "badword": 0,
       "afkReason": "",
       "nick": "Sayan Das",
-      "premium": "false",
+      "premium": false,
       "limit": 100,
       "totalLimit": 0
     },
@@ -752,7 +744,7 @@
       "badword": 0,
       "afkReason": "",
       "nick": "👅🥵💦সৌ র ভ🥵💦👅💘",
-      "premium": "false",
+      "premium": false,
       "limit": 100,
       "totalLimit": 0
     },
@@ -818,11 +810,89 @@
       "badword": 0,
       "afkReason": "",
       "nick": "𝑺𝒍𝒆𝒆𝒑𝒊𝒏𝒈...",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917601852326@s.whatsapp.net": {
+      "serialNumber": "b6d95c75f472e0b536b5f2fedb5057a4",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "[ プリタム ]",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919749336002@s.whatsapp.net": {
+      "serialNumber": "9b18a14239046c006e60228da40bf19a",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "ANKITA(MIMI)",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917501074328@s.whatsapp.net": {
+      "serialNumber": "8b1f89c3d72f945f59652b5f313f9193",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Mouli  Chakraborty",
       "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917602722782@s.whatsapp.net": {
+      "serialNumber": "a8b9abcb7543930682573c63c44910ad",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "༒`<XᠱD|>>>>",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "918100697714@s.whatsapp.net": {
+      "serialNumber": "461749d5513d177c2f67741ab9dceb49",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "𝑆𝑜ℎ𝑖𝑛𝑖 𝐶ℎ𝑎𝑘𝑟𝑎𝑏𝑜𝑟𝑡𝑦❤️❤️❤️",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "916289691237@s.whatsapp.net": {
+      "serialNumber": "cc98e9086999591a60bf314188d7dee1",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Sukuna",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919635731751@s.whatsapp.net": {
+      "serialNumber": "e2ee9f15bea6f29d1181188f8184c76b",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "~ BAD GIRL~",
+      "premium": false,
       "limit": 100,
       "totalLimit": 0
     }
   },
+  "database": {},
   "chats": {
     "120363047626537933@g.us": {
       "badword": false,
@@ -1085,6 +1155,9 @@
       "antilinkgc": false
     }
   },
+  "game": {
+    "math": []
+  },
   "settings": {
     "919366316018@s.whatsapp.net": {
       "totalhit": 250,
@@ -1180,7 +1253,7 @@
       }
     },
     "15202238877@s.whatsapp.net": {
-      "totalhit": 180,
+      "totalhit": 228,
       "totalError": 0,
       "online": false,
       "autosticker": false,
@@ -1211,5 +1284,9 @@
       }
     }
   },
-  "message": {}
+  "message": {},
+  "sticker": {},
+  "others": {
+    "vote": []
+  }
 }

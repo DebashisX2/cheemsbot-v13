@@ -1950,23 +1950,37 @@ XeonBotInc.sendMessage(m.chat,
       })
    }
   break
-  case 'fl':{
+  case 'fake' :case 'fakereply' :case 'fl' :{
     if (!text) return replygcxeon(`Example: ${prefix + command} message|sender|reply`)
       if (!/|/.test(text)) return replygcxeon(`The data you provided is invalid!, Example: \n ${prefix + command} message|sender|reply`)
         let message = q.split("|")[0]
         let sndr = q.split("|")[1]
-
         let tagsender = sndr.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-        let blockwwww = m.sndr ? m.sndr.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-
+        let fakesender = sndr.replace(/[^0-9]/g, '')
         let reply = q.split("|")[2]
 
-        let fakereply = { key: { fromMe: false, participant: `${blockwwww}`, remoteJid: '0@s.whatsapp.net' }, message: {extendedTextMessage: { text: message}}}
-
-
+        let fakereply = { key: 
+          { fromMe: false, 
+            participant: tagsender, 
+            remoteJid: tagsender },
+           message: {extendedTextMessage: 
+                    { text: message}
+          }
+        }
+        let key = {}
+        try {
+          key.remoteJid = m.quoted ? m.quoted.fakeObj.key.remoteJid : m.key.remoteJid
+         key.fromMe = m.quoted ? m.quoted.fakeObj.key.fromMe : m.key.fromMe
+         key.id = m.quoted ? m.quoted.fakeObj.key.id : m.key.id
+          key.participant = m.quoted ? m.quoted.fakeObj.participant : m.key.participant
+        } catch (e) {
+          console.error(e)
+        }
+        XeonBotInc.sendMessage(m.chat, { delete: key })
         XeonBotInc.sendMessage(m.chat, {
-          text: tagsender,
-        },{quoted:fakereply})
+          text: reply,
+        },{quoted:fakereply},
+      )
 
   }
     break
@@ -2911,7 +2925,7 @@ if (!isAdmins && !XeonTheCreator) return XeonStickAdmin()
                 reactionMessage = {
                     react: {
                         text: args[0],
-                        key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
+                        key: { remoteJid: m.chat, fromMe: false, id: quoted.id }
                     }
                 }
                 XeonBotInc.sendMessage(m.chat, reactionMessage)
@@ -3323,7 +3337,7 @@ break
                     replygcxeon(open)
                 }, timer)
                 break
-            case 'kick':
+            case 'kick': case 'remove':
                 if (!isAdmins && !isGroupOwner && !XeonTheCreator) return XeonStickAdmin()
                 if (!m.isGroup) return XeonStickGroup()
                 if (!isAdmins && !isGroupOwner && !XeonTheCreator) return XeonStickAdmin()
@@ -10234,9 +10248,15 @@ let msg = generateWAMessageFromContent(m.chat, {
           let user=m.sender
           let username =XeonBotInc.getName(user)
           let qtmsg = `hello ${username}\nhere is the MENU`
-  
+          let send = `919883478121@s.whatsapp.net`
          
-          let mquote = { key: { fromMe: false, participant: `${m.sender}`, remoteJid: '0@s.whatsapp.net' }, message: {extendedTextMessage: { text: qtmsg}}}
+          let mquote = { key: 
+            { fromMe: false, 
+              participant: send,
+               remoteJid: send }, 
+               message: 
+                  {extendedTextMessage: 
+                        { text: qtmsg}}}
 
         	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
