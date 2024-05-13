@@ -17,7 +17,7 @@ global.location = "Nalhati, Birbhum, WB,INDIA  " //ur location
 
 //new
 global.botname = 'Cheemsbot v13' //ur bot name
-global.ownernumber = '22390633817' //ur owner number
+global.ownernumber = '22389520946' //ur owner number
 global.ownername = 'HKEBA' //ur owner name
 global.websitex = "https://www.facebook.com/Debashi.Dey.X1/"
 global.wagc = "https://chat.whatsapp.com/C4NU6KefgoLL9W8vpbhbEY"
@@ -25,10 +25,10 @@ global.themeemoji = '📌'
 global.wm = " Cheemsbot V13 "
 global.botscript = 'https://github.com/DebashisX1/cheemsbot-v12' //script link
 global.packname = "Sticker By"
-global.author = "HKEBA Dey\n\n+22390633817"
-global.creator = "22390633817@s.whatsapp.net"
+global.author = "HKEBA Dey\n\n+22389520946"
+global.creator = "22389520946@s.whatsapp.net"
 global.xprefix = ' '
-global.premium = ["22390633817"] // Premium User
+global.premium = ["22389520946"] // Premium User
 global.hituet = 0
 
 //bot sett
