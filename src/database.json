@@ -1,12 +1,4 @@
 {
-  "sticker": {},
-  "database": {},
-  "game": {
-    "math": []
-  },
-  "others": {
-    "vote": []
-  },
   "users": {
     "919366316018@s.whatsapp.net": {
       "serialNumber": "5748ef2731f9b0ab993964d915670166",
@@ -15,28 +7,6 @@
       "badword": 0,
       "afkReason": "",
       "nick": "Hui",
-      "premium": "true",
-      "limit": 1000,
-      "totalLimit": 0
-    },
-    "916909137213@s.whatsapp.net": {
-      "serialNumber": "51b5bea707a330943f3f5622ddccf7b8",
-      "title": "Premium",
-      "afkTime": -1,
-      "badword": 0,
-      "afkReason": "",
-      "nick": "+91 69091 37213",
-      "premium": "true",
-      "limit": 1000,
-      "totalLimit": 0
-    },
-    "919402104403@s.whatsapp.net": {
-      "serialNumber": "42d9404996157ee8f33424778fed1808",
-      "title": "Premium",
-      "afkTime": -1,
-      "badword": 0,
-      "afkReason": "",
-      "nick": "+91 94021 04403",
       "premium": "true",
       "limit": 1000,
       "totalLimit": 0
@@ -50,6 +20,17 @@
       "nick": "╚»★ 𝓓𝓮𝓫𝓪𝓼𝓱𝓲𝓼 ★«╝",
       "premium": false,
       "limit": 100,
+      "totalLimit": 0
+    },
+    "919402104403@s.whatsapp.net": {
+      "serialNumber": "42d9404996157ee8f33424778fed1808",
+      "title": "Premium",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "+91 94021 04403",
+      "premium": "true",
+      "limit": 1000,
       "totalLimit": 0
     },
     "918695000499@s.whatsapp.net": {
@@ -477,7 +458,7 @@
       "badword": 0,
       "afkReason": "",
       "nick": "Sayan Das",
-      "premium": "false",
+      "premium": false,
       "limit": 100,
       "totalLimit": 0
     },
@@ -697,7 +678,7 @@
       "badword": 0,
       "afkReason": "",
       "nick": "✨💫Ankit💫",
-      "premium": "false",
+      "premium": false,
       "limit": 100,
       "totalLimit": 0
     },
@@ -752,7 +733,7 @@
       "badword": 0,
       "afkReason": "",
       "nick": "👅🥵💦সৌ র ভ🥵💦👅💘",
-      "premium": "false",
+      "premium": false,
       "limit": 100,
       "totalLimit": 0
     },
@@ -818,11 +799,122 @@
       "badword": 0,
       "afkReason": "",
       "nick": "𝑺𝒍𝒆𝒆𝒑𝒊𝒏𝒈...",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917601852326@s.whatsapp.net": {
+      "serialNumber": "b6d95c75f472e0b536b5f2fedb5057a4",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "[ プリタム ]",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919749336002@s.whatsapp.net": {
+      "serialNumber": "9b18a14239046c006e60228da40bf19a",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "ANKITA(MIMI)",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917501074328@s.whatsapp.net": {
+      "serialNumber": "8b1f89c3d72f945f59652b5f313f9193",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Mouli  Chakraborty",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917602722782@s.whatsapp.net": {
+      "serialNumber": "a8b9abcb7543930682573c63c44910ad",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "༒`<XᠱD|>>>>",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "918100697714@s.whatsapp.net": {
+      "serialNumber": "461749d5513d177c2f67741ab9dceb49",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "𝑆𝑜ℎ𝑖𝑛𝑖 𝐶ℎ𝑎𝑘𝑟𝑎𝑏𝑜𝑟𝑡𝑦❤️❤️❤️",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "916289691237@s.whatsapp.net": {
+      "serialNumber": "cc98e9086999591a60bf314188d7dee1",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Sukuna",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919635731751@s.whatsapp.net": {
+      "serialNumber": "e2ee9f15bea6f29d1181188f8184c76b",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "~ BAD GIRL~",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919883429943@s.whatsapp.net": {
+      "serialNumber": "ee39db3d25d720fa8e91d5e27398bcf0",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "শিব 2.0",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917872507363@s.whatsapp.net": {
+      "serialNumber": "3770496c2e60d657e026a4ca6b5c3e8b",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "আলুপোস্ত 😋❤️",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "918822375633@s.whatsapp.net": {
+      "serialNumber": "77dc6223c225bdbd50fed3a0913bbb46",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Be Unique❄",
       "premium": "false",
       "limit": 100,
       "totalLimit": 0
     }
   },
+  "database": {},
   "chats": {
     "120363047626537933@g.us": {
       "badword": false,
@@ -844,7 +936,7 @@
       "antipromotion": false,
       "antilinkgc": false
     },
-    "916909137213@s.whatsapp.net": {
+    "919339619072@s.whatsapp.net": {
       "badword": false,
       "antiforeignnum": false,
       "antibot": false,
@@ -908,7 +1000,7 @@
       "badword": false,
       "antiforeignnum": false,
       "antibot": false,
-      "antiviewonce": false,
+      "antiviewonce": true,
       "antispam": false,
       "antivirtex": false,
       "antimedia": false,
@@ -945,26 +1037,6 @@
       "antilinkgc": false
     },
     "917478137731-1607787201@g.us": {
-      "badword": false,
-      "antiforeignnum": false,
-      "antibot": false,
-      "antiviewonce": false,
-      "antispam": false,
-      "antivirtex": false,
-      "antimedia": false,
-      "antiimage": false,
-      "antivideo": false,
-      "antiaudio": false,
-      "antipoll": false,
-      "antisticker": false,
-      "antilocation": false,
-      "antidocument": false,
-      "anticontact": false,
-      "antilink": false,
-      "antipromotion": false,
-      "antilinkgc": false
-    },
-    "919339619072@s.whatsapp.net": {
       "badword": false,
       "antiforeignnum": false,
       "antibot": false,
@@ -1085,6 +1157,9 @@
       "antilinkgc": false
     }
   },
+  "game": {
+    "math": []
+  },
   "settings": {
     "919366316018@s.whatsapp.net": {
       "totalhit": 250,
@@ -1104,7 +1179,7 @@
       "autotype": false,
       "watermark": {
         "packname": "Sticker By",
-        "author": "🦄드림 가이 Xeon\n\n+916909137213"
+        "author": "🦄드림 가이 Xeon\n\n+919339619072"
       },
       "about": {
         "bot": {
@@ -1113,11 +1188,11 @@
         },
         "owner": {
           "nick": "+91 69091 37213",
-          "alias": "916909137213"
+          "alias": "919339619072"
         }
       }
     },
-    "916909137213@s.whatsapp.net": {
+    "919339619072@s.whatsapp.net": {
       "totalhit": 3,
       "totalError": 0,
       "online": false,
@@ -1135,7 +1210,7 @@
       "autotype": false,
       "watermark": {
         "packname": "Sticker By",
-        "author": "🦄드림 가이 Xeon\n\n+916909137213"
+        "author": "🦄드림 가이 Xeon\n\n+919339619072"
       },
       "about": {
         "bot": {
@@ -1144,7 +1219,7 @@
         },
         "owner": {
           "nick": "+91 69091 37213",
-          "alias": "916909137213"
+          "alias": "919339619072"
         }
       }
     },
@@ -1166,7 +1241,7 @@
       "autotype": false,
       "watermark": {
         "packname": "Sticker By",
-        "author": "🦄드림 가이 Xeon\n\n+916909137213"
+        "author": "🦄드림 가이 Xeon\n\n+919339619072"
       },
       "about": {
         "bot": {
@@ -1175,12 +1250,12 @@
         },
         "owner": {
           "nick": "Xeon Bot User",
-          "alias": "916909137213"
+          "alias": "919339619072"
         }
       }
     },
     "15202238877@s.whatsapp.net": {
-      "totalhit": 180,
+      "totalhit": 262,
       "totalError": 0,
       "online": false,
       "autosticker": false,
@@ -1197,7 +1272,7 @@
       "autotype": false,
       "watermark": {
         "packname": "Sticker By",
-        "author": "🦄드림 가이 Xeon\n\n+916909137213"
+        "author": "🦄드림 가이 Xeon\n\n+919339619072"
       },
       "about": {
         "bot": {
@@ -1206,10 +1281,14 @@
         },
         "owner": {
           "nick": "+91 69091 37213",
-          "alias": "916909137213"
+          "alias": "919339619072"
         }
       }
     }
   },
-  "message": {}
+  "message": {},
+  "sticker": {},
+  "others": {
+    "vote": []
+  }
 }
