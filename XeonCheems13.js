@@ -1833,11 +1833,21 @@ XeonBotInc.sendMessage(m.chat,
 
           case 'mywhatsapp':{ 
 
+            let waprof = { key: 
+              { fromMe: false, 
+                participant: m.sender, 
+                remoteJid:'status@broadcast' },
+               message: {extendedTextMessage: 
+                        { text: 'Save my no. for more updates' }
+              }
+            }
             try {
-                    ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
-                } catch (err) {
-                ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
-                }
+              let a = m.sender
+              ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
+              } catch (err) {
+              ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
+              }
+              XeonWlcm = await getBuffer(ppuser)
            
               let mywhatsapp = 'https://wa.me/qr/ZPZ7Z6WYJ752O1'
             XeonBotInc.sendMessage(m.chat,
@@ -1853,7 +1863,7 @@ XeonBotInc.sendMessage(m.chat,
                     renderLargerThumbnail: true
 
                 }}}, {
-                    quoted: m
+                    quoted: waprof
                 }
             )
       
@@ -1861,12 +1871,21 @@ XeonBotInc.sendMessage(m.chat,
           break
 
           case 'myfb':{ 
+            let fbprof = { key: 
+              { fromMe: false, 
+                participant: m.sender, 
+                remoteJid:'status@broadcast' },
+               message: {extendedTextMessage: 
+                        { text: 'follow me on facebook' }
+              }
+            }
             try {
-                    ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
-                } catch (err) {
-                ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
-                }
-            XeonWlcm = await getBuffer(ppuser)
+              let a = m.sender
+              ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
+              } catch (err) {
+              ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
+              }
+              XeonWlcm = await getBuffer(ppuser)
 
             let fbprofile = 'https://www.facebook.com/Debashi.Dey.X1'
             XeonBotInc.sendMessage(m.chat,
@@ -1882,19 +1901,28 @@ XeonBotInc.sendMessage(m.chat,
                     renderLargerThumbnail: true
 
                 }}}, {
-                    quoted: m
+                    quoted: fbprof
                 }
             )
       
           }
           break
           case 'myig':{ 
+            let igprof = { key: 
+              { fromMe: false, 
+                participant: m.sender, 
+                remoteJid:'status@broadcast' },
+               message: {extendedTextMessage: 
+                        { text: 'Follow me on Instagram' }
+              }
+            }
             try {
-                    ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
-                } catch (err) {
-                ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
-                }
-            XeonWlcm = await getBuffer(ppuser)
+              let a = m.sender
+              ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
+              } catch (err) {
+              ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
+              }
+              XeonWlcm = await getBuffer(ppuser)
 
             let myig = 'https://www.instagram.com/debashis_x1/'
             XeonBotInc.sendMessage(m.chat,
@@ -1910,18 +1938,27 @@ XeonBotInc.sendMessage(m.chat,
                     renderLargerThumbnail: true
 
                 }}}, {
-                    quoted: m
+                    quoted: igprof
                 }
             )
       
           }
           break 
-          case 'mygithub':{ 
-            try {
-                    ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
-                } catch (err) {
-                ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
-                }
+          case 'mygithub':{  
+             let gitprof = { key: 
+            { fromMe: false, 
+              participant: m.sender, 
+              remoteJid:'status@broadcast' },
+             message: {extendedTextMessage: 
+                      { text: 'My github profile' }
+            }
+          }
+          try {
+            let a = m.sender
+            ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
+            } catch (err) {
+            ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
+            }
             XeonWlcm = await getBuffer(ppuser)
 
             let mygithub = 'https://github.com/Debashis121212'
@@ -1938,19 +1975,29 @@ XeonBotInc.sendMessage(m.chat,
                     renderLargerThumbnail: true
 
                 }}}, {
-                    quoted: m
+                    quoted: gitprof
                 }
             )
       
           }
           break
           case 'mytelegram':{ 
+            
+            let tgprof = { key: 
+              { fromMe: false, 
+                participant: m.sender, 
+                remoteJid:'status@broadcast' },
+               message: {extendedTextMessage: 
+                        { text: 'Click to get my Telegram contact no.' }
+              }
+            }
             try {
-                    ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
-                } catch (err) {
-                ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
-                }
-            XeonWlcm = await getBuffer(ppuser)
+              let a = m.sender
+              ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
+              } catch (err) {
+              ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
+              }
+              XeonWlcm = await getBuffer(ppuser)
 
             let mytelegram = 'https://t.me/Debashis_005'
             XeonBotInc.sendMessage(m.chat,
@@ -1962,7 +2009,7 @@ XeonBotInc.sendMessage(m.chat,
                     body: ownername,
                     thumbnail: XeonWlcm,
                     sourceUrl: mytelegram,
-                    mediaType: 1,
+                    mediaType: 2,
                     renderLargerThumbnail: true
 
                 }}}, {
@@ -2087,6 +2134,7 @@ XeonBotInc.sendMessage(m.chat,
           thumbnail: XeonWlcm,
           sourceUrl: websitex,
           mediaType: 1,
+          renderLargerThumbnail: false,
       }}}, {
           quoted: m
       })
@@ -6327,6 +6375,7 @@ let msg = generateWAMessageFromContent(from, {
                 }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
+
               {
                 "name": "quick_reply",
                 "buttonParamsJson": `{"display_text":"Congratulations 🥳","id":"Biye ta kor taratri🎷🎺"}`
@@ -10022,7 +10071,7 @@ break;
             let latensie = speed() - timestampe
             let a = db.data.users[sender]
             let me = m.sender
-            let xmenu_oh2 = `┌─❖
+            let xmenu_oh2 = `┌─────❖
 │ Hi 👋 
 └┬❖  ${pushname} 
 ┌┤✑  ${xeonytimewisher} 😄
@@ -10387,11 +10436,17 @@ let msg = generateWAMessageFromContent(m.chat, {
         messageId: msg.key.id
         })
         } else if (typemenu === 'v12') {
+          try {
+            let a = m.sender
+            ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
+            } catch (err) {
+            ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
+            }
+            XeonWlcm = await getBuffer(ppuser)
+
           let user=m.sender
           let username =XeonBotInc.getName(user)
           let qtmsg = `hello ${username}\nhere is the MENU`
-          let send = `919883478121@s.whatsapp.net`
-         
           let mquote = { key: 
             { fromMe: false, 
               participant: `${m.sender}`,
@@ -10399,6 +10454,7 @@ let msg = generateWAMessageFromContent(m.chat, {
                message: 
                   {extendedTextMessage: 
                         { text: qtmsg}}}
+                        
 
         	let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
@@ -10415,7 +10471,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: botname
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-                ...(await prepareWAMessageMedia({ image : fs.readFileSync('./XeonMedia/theme/cheemspic.jpg')}, { upload: XeonBotInc.waUploadToServer})), 
+                ...(await prepareWAMessageMedia({ image : XeonWlcm}, { upload: XeonBotInc.waUploadToServer})), 
                   title: ``,
                   gifPlayback: true,
                   subtitle: ownername,
@@ -10499,10 +10555,10 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-              {
+{
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
+`{"title":"MY PROFILES 📡",
 "sections":[{"title":"${botname}",
 "rows":[
 {"header":"WHATSAPP CONTACT NUMBER",
@@ -10519,8 +10575,7 @@ let msg = generateWAMessageFromContent(m.chat, {
 "id":"${prefix}mygithub"},
 {"header":"TELEGRAM",
 "title":"Telegram",
-"id":"${prefix}mytelegram"},
-]
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -10532,7 +10587,8 @@ let msg = generateWAMessageFromContent(m.chat, {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
              }
-           ],
+           ]
+         
           }),
           contextInfo: {  
                   mentionedJid: [m.sender], 
@@ -10719,28 +10775,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -10936,28 +10991,27 @@ let msg = generateWAMessageFromContent(m.chat, {
               }
 
               ,
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -11154,28 +11208,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -11306,28 +11359,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -11524,28 +11576,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -11676,28 +11727,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -11894,28 +11944,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -12046,28 +12095,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -12264,28 +12312,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -12416,28 +12463,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -12634,28 +12680,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -12786,28 +12831,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -13004,28 +13048,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -13349,28 +13392,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -13501,28 +13543,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -13719,28 +13760,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -13871,28 +13911,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -14089,28 +14128,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -14241,28 +14279,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -14459,28 +14496,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -14611,28 +14647,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -14829,28 +14864,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -14981,28 +15015,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -15199,28 +15232,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -15351,28 +15383,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -15569,28 +15600,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -15721,28 +15751,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -15939,28 +15968,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -16091,28 +16119,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -16309,28 +16336,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -16461,28 +16487,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -16679,28 +16704,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -16831,28 +16855,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -17049,28 +17072,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -17201,28 +17223,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -17419,28 +17440,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -17571,28 +17591,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -17789,28 +17808,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -17941,28 +17959,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -18159,28 +18176,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -18311,28 +18327,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -18529,28 +18544,27 @@ let msg = generateWAMessageFromContent(from, {
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
@@ -18681,28 +18695,27 @@ let msg = generateWAMessageFromContent(m.chat, {
 }]
 }`
               },
-               {
+              {
                 "name": "single_select",
                 "buttonParamsJson": 
-`{"title":"MY PROFILES",
-"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+`{"title":"MY PROFILES 📡",
+"sections":[{"title":"${botname}",
 "rows":[
-    {"header":"WHATSAPP CONTACT NUMBER",
-    "title":"WhatsApp",
-    "id":"${prefix}mywhatsapp"},
-    {"header":"FACEBOOK",
-    "title":"Follow me on Facebook",
-    "id":"${prefix}myfb"},
-    {"header":"INSTAGRAM",
-    "title":"Follow me on Instagram",
-    "id":"${prefix}myig"},
-    {"header":"GITHUB",
-    "title":"GitHub Profile",
-    "id":"${prefix}mygithub"},
-    {"header":"TELEGRAM",
-    "title":"Telegram",
-    "id":"${prefix}mytelegram"},
-]
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"}]
 }]
 }`
               },
