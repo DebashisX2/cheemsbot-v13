@@ -21,13 +21,13 @@ global.ownernumber = '22389520946' //ur owner number
 global.ownername = 'HKEBA' //ur owner name
 global.websitex = "https://www.facebook.com/Debashi.Dey.X1/"
 global.wagc = "https://chat.whatsapp.com/C4NU6KefgoLL9W8vpbhbEY"
-global.themeemoji = '📌'
+global.themeemoji = '🍭'
 global.wm = " Cheemsbot V13 "
 global.botscript = 'https://github.com/DebashisX1/cheemsbot-v12' //script link
 global.packname = "Sticker By"
 global.author = "HKEBA Dey\n\n+22389520946"
 global.creator = "22389520946@s.whatsapp.net"
-global.xprefix = 'K'
+global.xprefix = ' '
 global.premium = ["22389520946"] // Premium User
 global.hituet = 0
 
