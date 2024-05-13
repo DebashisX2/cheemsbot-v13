@@ -81,6 +81,14 @@ XeonBotInc.sendMessage(m.chat,
           await teddy()
           break
       
+    case 'mywhatsapp':{ 
+      let fbprofile = 'https://www.facebook.com/Debashi.Dey.X1'
+      XeonBotInc.sendMessage(m.chat,
+      { text: fbprofile,
+      })
+
+    }
+    break
   case 'family': case 'fm' : {
       if (!m.isGroup) return XeonStickGroup()
       function getRandomPercentage() {

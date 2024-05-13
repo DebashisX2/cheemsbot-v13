@@ -4,7 +4,7 @@
 //Instagram: unicorn_xeon13
 //Telegram: t.me/xeonbotinc
 //GitHub: @DGXeon
-//WhatsApp: +916909137213
+//WhatsApp: +919339619072
 //want more free bot scripts? subscribe to my youtube channel: https://youtube.com/@DGXeon
 require('./lib/listmenu')
 const {
@@ -480,7 +480,7 @@ quoted: m,
 		const fgclink = {key: {participant: "0@s.whatsapp.net","remoteJid": "0@s.whatsapp.net"},"message": {"groupInviteMessage": {"groupJid": "6288213840883-1616169743@g.us","inviteCode": "m","groupName": wm, "caption": `${pushname}`, 'jpegThumbnail': thumb}}}
 		const fvideo = {key: { fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {}) },message: { "videoMessage": { "title":botname, "h": wm,'seconds': '359996400', 'caption': `${pushname}`, 'jpegThumbnail': thumb}}}
 		const floc = {key : {participant : '0@s.whatsapp.net', ...(m.chat ? { remoteJid: `status@broadcast` } : {}) },message: {locationMessage: {name: wm,jpegThumbnail: thumb}}}
-		const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': ownername, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${ownername},;;;\nFN:${ownername}\nitem1.TEL;waid=916909137213:916909137213\nitem1.X-ABLabel:Mobile\nEND:VCARD`, 'jpegThumbnail': thumb, thumbnail: thumb,sendEphemeral: true}}}
+		const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': ownername, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${ownername},;;;\nFN:${ownername}\nitem1.TEL;waid=919339619072:919339619072\nitem1.X-ABLabel:Mobile\nEND:VCARD`, 'jpegThumbnail': thumb, thumbnail: thumb,sendEphemeral: true}}}
 	    const fakestatus = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})},message: { "imageMessage": {"url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc","mimetype": "image/jpeg","caption": wm,"fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=","fileLength": "28777","height": 1080,"width": 1079,"mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=","fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=","directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69","mediaKeyTimestamp": "1610993486","jpegThumbnail": fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),"scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="}}}
 	    const frpayment = {
 	key: {
@@ -1830,7 +1830,149 @@ XeonBotInc.sendMessage(m.chat,
       case 'teddy':
           await teddy()
           break
+
+          case 'mywhatsapp':{ 
+
+            try {
+                    ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
+                } catch (err) {
+                ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
+                }
+           
+              let mywhatsapp = 'https://wa.me/qr/ZPZ7Z6WYJ752O1'
+            XeonBotInc.sendMessage(m.chat,
+            { text: 'click on the context info to get redirected to my Whatsapp ',
+              contextInfo:{
+                externalAdReply: {
+                    showAdAttribution: true,
+                    title: botname,
+                    body: ownername,
+                    thumbnail: XeonWlcm,
+                    sourceUrl: mywhatsapp,
+                    mediaType: 1,
+                    renderLargerThumbnail: true
+
+                }}}, {
+                    quoted: m
+                }
+            )
       
+          }
+          break
+
+          case 'myfb':{ 
+            try {
+                    ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
+                } catch (err) {
+                ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
+                }
+            XeonWlcm = await getBuffer(ppuser)
+
+            let fbprofile = 'https://www.facebook.com/Debashi.Dey.X1'
+            XeonBotInc.sendMessage(m.chat,
+              { text: 'click on the context info to get redirected to my Facebook ',
+              contextInfo:{
+                externalAdReply: {
+                    showAdAttribution: true,
+                    title: botname,
+                    body: ownername,
+                    thumbnail: XeonWlcm,
+                    sourceUrl: fbprofile,
+                    mediaType: 1,
+                    renderLargerThumbnail: true
+
+                }}}, {
+                    quoted: m
+                }
+            )
+      
+          }
+          break
+          case 'myig':{ 
+            try {
+                    ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
+                } catch (err) {
+                ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
+                }
+            XeonWlcm = await getBuffer(ppuser)
+
+            let myig = 'https://www.instagram.com/debashis_x1/'
+            XeonBotInc.sendMessage(m.chat,
+              { text: 'click on the context info to get redirected to my Instagram ',
+              contextInfo:{
+                externalAdReply: {
+                    showAdAttribution: true,
+                    title: botname,
+                    body: ownername,
+                    thumbnail: XeonWlcm,
+                    sourceUrl: myig,
+                    mediaType: 1,
+                    renderLargerThumbnail: true
+
+                }}}, {
+                    quoted: m
+                }
+            )
+      
+          }
+          break 
+          case 'mygithub':{ 
+            try {
+                    ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
+                } catch (err) {
+                ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
+                }
+            XeonWlcm = await getBuffer(ppuser)
+
+            let mygithub = 'https://github.com/Debashis121212'
+            XeonBotInc.sendMessage(m.chat,
+              { text: 'click on the context info to get redirected to my GitHub ',
+              contextInfo:{
+                externalAdReply: {
+                    showAdAttribution: true,
+                    title: botname,
+                    body: ownername,
+                    thumbnail: XeonWlcm,
+                    sourceUrl: mygithub,
+                    mediaType: 1,
+                    renderLargerThumbnail: true
+
+                }}}, {
+                    quoted: m
+                }
+            )
+      
+          }
+          break
+          case 'mytelegram':{ 
+            try {
+                    ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
+                } catch (err) {
+                ppuser = 'https://images.app.goo.gl/5kHFgvSatAYWunaw9'
+                }
+            XeonWlcm = await getBuffer(ppuser)
+
+            let mytelegram = 'https://t.me/Debashis_005'
+            XeonBotInc.sendMessage(m.chat,
+              { text: 'click on the context info to get redirected to my Telegram ',
+              contextInfo:{
+                externalAdReply: {
+                    showAdAttribution: true,
+                    title: botname,
+                    body: ownername,
+                    thumbnail: XeonWlcm,
+                    sourceUrl: mytelegram,
+                    mediaType: 1,
+                    renderLargerThumbnail: true
+
+                }}}, {
+                    quoted: m
+                }
+            )
+      
+          }
+          break
+
   case 'family': case 'fm' : {
       if (!m.isGroup) return XeonStickGroup()
       function getRandomPercentage() {
@@ -2349,7 +2491,7 @@ XeonBotInc.sendMessage(m.chat,
             break
             case 'delprem':
                 if (!XeonTheCreator) return XeonStickOwner()
-                if (args.length < 1) return replygcxeon(`Usage ${prefix + command} @tag\n${prefix + command} number\n\nExample : ${prefix + command} 916909137213`)
+                if (args.length < 1) return replygcxeon(`Usage ${prefix + command} @tag\n${prefix + command} number\n\nExample : ${prefix + command} 919339619072`)
                 if (m.mentionedJid.length !== 0) {
                     for (let i = 0; i < m.mentionedJid.length; i++) {
                         premium.splice(getPremiumPosition(m.mentionedJid[i], premium), 1)
@@ -2390,7 +2532,7 @@ replygcxeon(`Number ${bnnd} Has Become An Owner!!!`)
 break
 case 'delowner':
 if (!XeonTheCreator) return XeonStickOwner()
-if (!args[0]) return replygcxeon(`Use ${prefix+command} nomor\nExample ${prefix+command} 916909137213`)
+if (!args[0]) return replygcxeon(`Use ${prefix+command} nomor\nExample ${prefix+command} 919339619072`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')
 unp = owner.indexOf(ya)
 owner.splice(unp, 1)
@@ -3282,7 +3424,7 @@ if (!isAdmins && !XeonTheCreator) return XeonStickAdmin()
             case 'invite': {
 	if (!m.isGroup) return XeonStickGroup()
 	if (!isBotAdmins) return XeonStickBotAdmin()
-if (!text) return replygcxeon(`Enter the number you want to invite to the group\n\nExample :\n*${prefix + command}* 916909137213`)
+if (!text) return replygcxeon(`Enter the number you want to invite to the group\n\nExample :\n*${prefix + command}* 919339619072`)
 if (text.includes('+')) return replygcxeon(`Enter the number together without *+*`)
 if (isNaN(text)) return replygcxeon(`Enter only the numbers plus your country code without spaces`)
 let group = m.chat
@@ -10148,7 +10290,7 @@ let msg = generateWAMessageFromContent(from, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -10210,7 +10352,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -10252,8 +10394,8 @@ let msg = generateWAMessageFromContent(m.chat, {
          
           let mquote = { key: 
             { fromMe: false, 
-              participant: send,
-               remoteJid: send }, 
+              participant: `${m.sender}`,
+               remoteJid:  `${m.sender}` }, 
                message: 
                   {extendedTextMessage: 
                         { text: qtmsg}}}
@@ -10358,21 +10500,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
               {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"${botname}",
+"rows":[
+{"header":"WHATSAPP CONTACT NUMBER",
+"title":"WhatsApp",
+"id":"${prefix}mywhatsapp"},
+{"header":"FACEBOOK",
+"title":"Follow me on Facebook",
+"id":"${prefix}myfb"},
+{"header":"INSTAGRAM",
+"title":"Follow me on Instagram",
+"id":"${prefix}myig"},
+{"header":"GITHUB",
+"title":"GitHub Profile",
+"id":"${prefix}mygithub"},
+{"header":"TELEGRAM",
+"title":"Telegram",
+"id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -10569,21 +10720,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -10640,7 +10800,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -10702,31 +10862,105 @@ let msg = generateWAMessageFromContent(m.chat, {
                 "name": "single_select",
                 "buttonParamsJson": 
 `{"title":"MENU 🌺",
-"sections":[{"title":"${ownername}",
-"highlight_label":"${botname}",
-"rows":[{"header":"ALL MENU",
+"sections":[{"title":"${botname}",
+"rows":[
+{"header":"ALL MENU",
+"title":"All fetures of this bot",
+"id":"${prefix}allmenu"},
+{"header":"SEARCH MENU",
+"title":"Search Options",
+"id":"${prefix}searchmenu"},
+{"header":"DOWNLOAD MENU",
+"title":"Download Options",
+"id":"${prefix}downloadmenu"},
+{"header":"GAME MENU",
+"title":"Bot Games",
+"id":"${prefix}gamemenu"},
+{"header":"FUN MENU",
+"title":"Funny functions",
+"id":"${prefix}funmenu"},
+{"header":"AI MENU",
+"title":"AI Related Functions",
+"id":"${prefix}aimenu"},
+{"header":"GROUP MENU",
+"title":"Group managing functions",
+"id":"${prefix}groupmenu"},
+{"header":"OWNER MENU",
+"title":"Owner Controls",
+"id":"${prefix}ownermenu"},
+{"header":"CONVERT MENU",
+"title":"Conversions Options",
+"id":"${prefix}convertmenu"},
+{"header":"LIST MENU",
 "title":"click to display",
-"description":"Displays The List Of All The Features",
-"id":"${prefix}allmenu"}]
+"description":"Listing Options",
+"id":"${prefix}listmenu"},
+{"header":"RELIGION MENU",
+"title":"Religion related commands",
+"id":"${prefix}religionmenu"},
+{"header":"PHOTOXY MENU",
+"title":"Photooxy Features",
+"id":"${prefix}photooxymenu"},
+{"header":"NSFW MENU",
+"title":"NSFW Commands 😁",
+"id":"${prefix}nsfwmenu"},
+{"header":"ANIME MENU",
+"title":"Anime Menu",
+"id":"${prefix}animemenu"},
+{"header":"RANDOM PHOTO MENU",
+"title":"Generate random photos",
+"id":"${prefix}randomphotomenu"},
+{"header":"RANDOM VIDEO MENU",
+"title":"Generate random photos",
+"id":"${prefix}randomvideomenu"},
+{"header":"STICKER MENU",
+"title":"Sticker Options",
+"id":"${prefix}stickermenu"},
+{"header":"DATABASE MENU",
+"title":"Database commands",
+"id":"${prefix}databasemenu"},
+{"header":"STORE MENU",
+"title":"Store commands",
+"id":"${prefix}storemenu"},
+{"header":"STALKER MENU",
+"title":"List Of Stalking Features",
+"id":"${prefix}stalkermenu"},
+{"header":"BUG MENU",
+"title":"Bugs and Viruses",
+"id":"${prefix}bugmenu"},
+{"header":"OTHER MENU",
+"title":"Other",
+"id":"${prefix}othermenu"}]
+}]
+}`
+              }
+
+              ,
+               {
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
 }]
 }`
               },
-               {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -10921,21 +11155,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -10992,7 +11235,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -11064,21 +11307,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -11273,21 +11525,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -11344,7 +11605,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -11416,21 +11677,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -11625,21 +11895,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -11696,7 +11975,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -11768,21 +12047,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -11977,21 +12265,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -12048,7 +12345,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -12120,21 +12417,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -12329,21 +12635,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -12400,7 +12715,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -12472,21 +12787,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -12681,21 +13005,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -12752,7 +13085,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -13017,21 +13350,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -13088,7 +13430,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -13160,21 +13502,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -13369,21 +13720,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -13440,7 +13800,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -13512,21 +13872,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -13721,21 +14090,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -13792,7 +14170,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -13864,21 +14242,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -14073,21 +14460,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -14144,7 +14540,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -14216,21 +14612,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -14425,21 +14830,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -14496,7 +14910,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -14568,21 +14982,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -14777,21 +15200,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -14848,7 +15280,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -14920,21 +15352,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -15129,21 +15570,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -15200,7 +15650,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -15272,21 +15722,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -15481,21 +15940,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -15552,7 +16020,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -15624,21 +16092,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -15833,21 +16310,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -15904,7 +16390,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -15976,21 +16462,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -16185,21 +16680,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -16256,7 +16760,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -16328,21 +16832,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -16537,21 +17050,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -16608,7 +17130,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -16680,21 +17202,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -16889,21 +17420,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -16960,7 +17500,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -17032,21 +17572,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -17241,21 +17790,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -17312,7 +17870,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -17384,21 +17942,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -17593,21 +18160,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -17664,7 +18240,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -17736,21 +18312,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -17945,21 +18530,30 @@ let msg = generateWAMessageFromContent(from, {
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -18016,7 +18610,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"WhatsApp 🪀\",\"url\":\"https://wa.me/qr/ZPZ7Z6WYJ752O1\",\"merchant_url\":\"https://www.google.com\"}"
               },              
               {
   "name": "quick_reply",
@@ -18088,21 +18682,30 @@ let msg = generateWAMessageFromContent(m.chat, {
 }`
               },
                {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Facebook\",\"url\":\"https://www.facebook.com/Debashi.Dey.X1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"Instagram 💧\",\"url\":\"https://www.instagram.com/debashis_x1\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"GitHub 🔘\",\"url\":\"https://github.com/Debashis121212\",\"merchant_url\":\"https://www.google.com\"}"
-             },
-             {
-                "name": "cta_url",
-                "buttonParamsJson": "{\"display_text\":\"WhatsApp ☘️\",\"url\":\"https://wa.me/919339619072\",\"merchant_url\":\"https://www.google.com\"}"
-             },
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MY PROFILES",
+"sections":[{"title":"$MY SOCIAL MEDIA PROFILE LINKS",
+"rows":[
+    {"header":"WHATSAPP CONTACT NUMBER",
+    "title":"WhatsApp",
+    "id":"${prefix}mywhatsapp"},
+    {"header":"FACEBOOK",
+    "title":"Follow me on Facebook",
+    "id":"${prefix}myfb"},
+    {"header":"INSTAGRAM",
+    "title":"Follow me on Instagram",
+    "id":"${prefix}myig"},
+    {"header":"GITHUB",
+    "title":"GitHub Profile",
+    "id":"${prefix}mygithub"},
+    {"header":"TELEGRAM",
+    "title":"Telegram",
+    "id":"${prefix}mytelegram"},
+]
+}]
+}`
+              },
              {
                "name": "quick_reply",
                "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
@@ -18516,7 +19119,7 @@ replygcxeon(`*Successfully sent as many bugs as ${amount} Please pause for 3 min
 break
 case 'pmbug' :{
  if (!isPremium) return replygcxeon(mess.premium)
- if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916909137213`)
+ if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 919339619072`)
  await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "30"
@@ -18537,7 +19140,7 @@ replygcxeon(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'delaybug' : {
 if (!isPremium) return replygcxeon(mess.premium)
-if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916909137213`)
+if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 919339619072`)
 await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "30"
@@ -18558,9 +19161,9 @@ replygcxeon(`*Successfully Sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'docubug': {
 if (!isPremium) return replygcxeon(mess.premium)
-if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916909137213`)
+if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 919339619072`)
 await loading()
-if (args.length < 1) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916909137213`)
+if (args.length < 1) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 919339619072`)
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "15"
 for (let i = 0; i < amount; i++) {
@@ -18580,7 +19183,7 @@ replygcxeon(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'unlimitedbug' : {
 if (!isPremium) return replygcxeon(mess.premium)
-if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916909137213`)
+if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 919339619072`)
 await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "30"
@@ -18601,7 +19204,7 @@ replygcxeon(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'bombug': {
 if (!isPremium) return replygcxeon(mess.premium)
-if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916909137213`)
+if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 919339619072`)
 await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "30"
@@ -18622,7 +19225,7 @@ replygcxeon(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'lagbug' : {
 if (!isPremium) return replygcxeon(mess.premium)
-if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916909137213`)
+if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 919339619072`)
 await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "30"
@@ -18643,7 +19246,7 @@ replygcxeon(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'trollybug': {
 if (!isPremium) return replygcxeon(mess.premium)
-if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 916909137213`)
+if (!args[0]) return replygcxeon(`Use ${prefix+command} number\nExample ${prefix+command} 919339619072`)
 await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "15"
@@ -18657,7 +19260,7 @@ var order = generateWAMessageFromContent(from, proto.Message.fromObject({
 "surface": "CATALOG",
 "message": `${botname}`,
 "orderTitle": " TROLLY BUG ", 
-"sellerJid": "916909137213@s.whatsapp.net",
+"sellerJid": "919339619072@s.whatsapp.net",
 "token": "AR6z9PAvHjs9Qa7AYgBUjSEvcnOcRWycFpwieIhaMKdrhQ=="
 }
 }), { userJid: from, quoted:m})
@@ -18793,7 +19396,7 @@ var order = generateWAMessageFromContent(from, proto.Message.fromObject({
 "surface": "CATALOG",
 "message": `${botname}`,
 "orderTitle": " TROLLY BUG ", 
-"sellerJid": "916909137213@s.whatsapp.net",
+"sellerJid": "919339619072@s.whatsapp.net",
 "token": "AR6z9PAvHjs9Qa7AYgBUjSEvcnOcRWycFpwieIhaMKdrhQ=="
 }
 }), { userJid: from, quoted:m})
@@ -19401,7 +20004,7 @@ XeonBotInc.copyNForward(m.chat, msgs[budy.toLowerCase()], true, {quoted: m})
     } catch (err) {
         console.log(util.format(err))
         let e = String(err)
-XeonBotInc.sendMessage("916909137213@s.whatsapp.net", { text: "Hello developer, there seems to be an error, please fix it " + util.format(e), 
+XeonBotInc.sendMessage("919339619072@s.whatsapp.net", { text: "Hello developer, there seems to be an error, please fix it " + util.format(e), 
 contextInfo:{
 forwardingScore: 9999999, 
 isForwarded: true
