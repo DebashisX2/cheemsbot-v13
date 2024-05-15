@@ -1085,6 +1085,83 @@
       "premium": "false",
       "limit": 100,
       "totalLimit": 0
+    },
+    "919091724629@s.whatsapp.net": {
+      "serialNumber": "c82ce528b3f15fff31cc139e2bbd7d94",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "I HATE YOU",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917076102125@s.whatsapp.net": {
+      "serialNumber": "7b697ebc6eb79b96333e5a7d0fb9b613",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Debopom",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "916289073563@s.whatsapp.net": {
+      "serialNumber": "01e7ad04cb74e19e0dc61ee8f37a53e5",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Kasish Beauty Parlour",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917501129146@s.whatsapp.net": {
+      "serialNumber": "f7a9312ba77d4e4f88532d144e9b04ca",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Probir❤️❤️",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919123876692@s.whatsapp.net": {
+      "serialNumber": "548cfd529617b9077287560ff221a8e6",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "𝕴𝖙𝖘_𝖆𝖇𝖎𝖗",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919330238013@s.whatsapp.net": {
+      "serialNumber": "1de85143296f33b14ace03a3059d1fd8",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "O RE O",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "918348706715@s.whatsapp.net": {
+      "serialNumber": "ed781be3951c2ef2b8b963f0840802a9",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Ray__ Amit",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
     }
   },
   "chats": {
@@ -1367,6 +1444,26 @@
       "antilink": false,
       "antipromotion": false,
       "antilinkgc": false
+    },
+    "15202238877@s.whatsapp.net": {
+      "badword": false,
+      "antiforeignnum": false,
+      "antibot": false,
+      "antiviewonce": false,
+      "antispam": false,
+      "antivirtex": false,
+      "antimedia": false,
+      "antiimage": false,
+      "antivideo": false,
+      "antiaudio": false,
+      "antipoll": false,
+      "antisticker": false,
+      "antilocation": false,
+      "antidocument": false,
+      "anticontact": false,
+      "antilink": false,
+      "antipromotion": false,
+      "antilinkgc": false
     }
   },
   "settings": {
@@ -1464,7 +1561,7 @@
       }
     },
     "15202238877@s.whatsapp.net": {
-      "totalhit": 347,
+      "totalhit": 427,
       "totalError": 0,
       "online": false,
       "autosticker": false,

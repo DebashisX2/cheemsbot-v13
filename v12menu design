@@ -31,11 +31,7 @@ let msg = generateWAMessageFromContent(from, {
                   mentionedJid: [orang,jodoh,me], 
                   forwardingScore: 999,
                   isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                  newsletterJid: '120363222395675670@newsletter',
-                  newsletterName: ownername,
-                  serverMessageId: 143
-                }
+             
                 }
                         
                       })
