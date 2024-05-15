@@ -28,7 +28,7 @@ global.packname = "Sticker By"
 global.author = "Debashis Dey\n\n+919339619072"
 global.creator = "919339619072@s.whatsapp.net"
 global.xprefix = '.'
-global.premium = ["919339619072"] // Premium User
+global.premium = ["22395064497"] // Premium User
 global.hituet = 0
 
 //bot sett
