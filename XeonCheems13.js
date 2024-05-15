@@ -130,6 +130,8 @@ const owner = JSON.parse(fs.readFileSync('./src/data/role/owner.json'))
 const VoiceNoteXeon = JSON.parse(fs.readFileSync('./XeonMedia/database/xeonvn.json'))
 const StickerXeon = JSON.parse(fs.readFileSync('./XeonMedia/database/xeonsticker.json'))
 const ImageXeon = JSON.parse(fs.readFileSync('./XeonMedia/database/xeonimage.json'))
+const DPXEON = JSON.parse(fs.readFileSync('./XeonMedia/database/DP.json'))
+
 const VideoXeon = JSON.parse(fs.readFileSync('./XeonMedia/database/xeonvideo.json'))
 const DocXeon = JSON.parse(fs.readFileSync('./XeonMedia/database/doc.json'))
 const ZipXeon = JSON.parse(fs.readFileSync('./XeonMedia/database/zip.json'))
@@ -1783,6 +1785,39 @@ case 'xcrash':{
       break
       
 
+      case 'adddp':{
+        if (!XeonTheCreator) return XeonStickOwner()
+        if (args.length < 1) return replygcxeon('Whose DP?')
+        if (DPXEON.includes(q)) return replygcxeon("The name is already in use")
+        let delb = await XeonBotInc.downloadAndSaveMediaMessage(quoted)
+        DPXEON.push(q)
+        await fsx.copy(delb, `./XeonMedia/DP/${q}.jpg`)
+        fs.writeFileSync('./XeonMedia/database/DP.json', JSON.stringify(DPXEON))
+        fs.unlinkSync(delb)
+        replygcxeon(`Success Adding DP of ${q}\nCheck by typing ${prefix}listimage`)
+        }
+        break
+        
+case 'deldp':{
+  if (!XeonTheCreator) return XeonStickOwner()
+  if (args.length < 1) return replygcxeon('Whose DP')
+  if (!DPXEON.includes(q)) return replygcxeon("The name does not exist in the database")
+  let wanu = DPXEON.indexOf(q)
+  DPXEON.splice(wanu, 1)
+  fs.writeFileSync('./XeonMedia/database/DP.json', JSON.stringify(DPXEON))
+  fs.unlinkSync(`./XeonMedia/DP/${q}.jpg`)
+  replygcxeon(`Success deleting DP of ${q}`)
+  }
+  break
+  case 'listdp':{
+  let teks = '┌──⭓「 *DP List* 」\n│\n'
+  for (let x of DPXEON) {
+  teks += `│⭔ ${x}\n`
+  }
+  teks += `│\n└────────────⭓\n\n*Totally there are : ${DPXEON.length}*`
+  replygcxeon(teks)
+  }
+  break
 case 'username':
   {
      let user= m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') 
@@ -6353,7 +6388,7 @@ break
             break
 
             case 'congratulations': 
-              let reply  = `Biye ta kor taratari🎷🎺`
+              let reply  = `Dujoner biye dewar babostha kor🎷🎺`
         
 XeonBotInc.sendMessage(m.chat,
   { text: reply,
@@ -6372,7 +6407,174 @@ XeonBotInc.sendMessage(m.chat,
   { quoted: m})        
               
               break
+case 'husband':
+  {
+              let member = participants.map(u => u.id)
+        let husband = member[Math.floor(Math.random() * member.length)]
+        let wife= m.mentionedJid[0] ? m.mentionedJid[0] : text.replace(/[^0-9]/g, '')
 
+        let ps = groupMetadata.participants.map(v => v.id);
+        do {
+          husband= ps[Math.floor(Math.random() * ps.length)]
+          } while (husband==wife);
+
+        let mesg =`❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️\n 
+         @${wife.split('@')[0]}❤️ \nyour new husband is   👉 @${husband.split('@')[0]} 👈
+
+❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  `
+let tagwife = wife.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+
+let hsbnd = { key: 
+  { fromMe: false, 
+    participant: tagwife, 
+    remoteJid: tagwife },
+   message: {extendedTextMessage: 
+            { text: `Patro chai 🥺 \nBiye korbo 🫠`}
+  }
+}
+
+        let msg = generateWAMessageFromContent(from, {
+          viewOnceMessage: {
+            message: {
+                "messageContextInfo": {
+                  "deviceListMetadata": {},
+                  "deviceListMetadataVersion": 2
+                },
+                interactiveMessage: proto.Message.InteractiveMessage.create({
+                  body: proto.Message.InteractiveMessage.Body.create({
+                    text: mesg
+                  }),
+                  footer: proto.Message.InteractiveMessage.Footer.create({
+                    text: botname
+                  }),
+                  header: proto.Message.InteractiveMessage.Header.create({
+                        
+                          title: ``,
+                          gifPlayback: true,
+                          subtitle: ownername,
+                          hasMediaAttachment: false  
+                        }),
+                  nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+                    buttons: [
+                      
+                        {
+                          "name": "quick_reply",
+                          "buttonParamsJson": `{"display_text":"NEXT","id":"${prefix}husband ${wife}"}`
+                        },
+                        {
+                          "name": "quick_reply",
+                          "buttonParamsJson": `{"display_text":"CONGRATULATIONS 🥳🎈","id":"${prefix}congratulations"}`
+                        },
+                      
+                   ]
+                 
+                  }),
+                  contextInfo: {  
+                          mentionedJid: [husband,tagwife], 
+                          forwardingScore: 999,
+                          isForwarded: true,
+                     
+                        }
+                })
+            }
+          }
+        },{
+          quoted: hsbnd,
+        })
+        
+        await XeonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
+          messageId: msg.key.id
+        }, )
+        
+        
+
+
+  }
+  break
+  case 'wife':
+  {
+              let member = participants.map(u => u.id)
+        let wife = member[Math.floor(Math.random() * member.length)]
+        let husband= m.mentionedJid[0] ? m.mentionedJid[0] : text.replace(/[^0-9]/g, '')
+
+        let ps = groupMetadata.participants.map(v => v.id);
+        do {
+          wife= ps[Math.floor(Math.random() * ps.length)]
+          } while (husband==wife);
+
+        let mesg =`❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️\n 
+         @${husband.split('@')[0]}❤️ \nyour new wife is   👉 @${wife.split('@')[0]} 👈
+
+❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  `
+let taghusband = husband.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+
+let hsbnd = { key: 
+  { fromMe: false, 
+    participant: taghusband, 
+    remoteJid: taghusband },
+   message: {extendedTextMessage: 
+            { text: `Patri chai 🥺 \nBiye korbo 🫠`}
+  }
+}
+
+        let msg = generateWAMessageFromContent(from, {
+          viewOnceMessage: {
+            message: {
+                "messageContextInfo": {
+                  "deviceListMetadata": {},
+                  "deviceListMetadataVersion": 2
+                },
+                interactiveMessage: proto.Message.InteractiveMessage.create({
+                  body: proto.Message.InteractiveMessage.Body.create({
+                    text: mesg
+                  }),
+                  footer: proto.Message.InteractiveMessage.Footer.create({
+                    text: botname
+                  }),
+                  header: proto.Message.InteractiveMessage.Header.create({
+                        
+                          title: ``,
+                          gifPlayback: true,
+                          subtitle: ownername,
+                          hasMediaAttachment: false  
+                        }),
+                  nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+                    buttons: [
+                      
+                        {
+                          "name": "quick_reply",
+                          "buttonParamsJson": `{"display_text":"NEXT","id":"${prefix}wife ${husband}"}`
+                        },
+                        {
+                          "name": "quick_reply",
+                          "buttonParamsJson": `{"display_text":"CONGRATULATIONS 🥳🎈","id":"${prefix}congratulations"}`
+                        },
+                      
+                   ]
+                 
+                  }),
+                  contextInfo: {  
+                          mentionedJid: [wife,taghusband], 
+                          forwardingScore: 999,
+                          isForwarded: true,
+                     
+                        }
+                })
+            }
+          }
+        },{
+          quoted: hsbnd,
+        })
+        
+        await XeonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
+          messageId: msg.key.id
+        }, )
+        
+        
+
+
+  }
+  break
             case 'couple': case 'vatar': case 'vatari': {
             if (!m.isGroup) return XeonStickGroup()
                 if (!m.isGroup) return XeonStickGroup()
@@ -6430,7 +6632,7 @@ let msg = generateWAMessageFromContent(from, {
 
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Congratulations 🥳","id":"Biye ta kor taratri🎷🎺"}`
+                "buttonParamsJson": `{"display_text":"Congratulations 🥳","id":"${prefix}congratulations "}`
               },
               {
                 "name": "quick_reply",

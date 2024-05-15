@@ -1,0 +1,56 @@
+let msg = generateWAMessageFromContent(from, {
+  viewOnceMessage: {
+    message: {
+        "messageContextInfo": {
+          "deviceListMetadata": {},
+          "deviceListMetadataVersion": 2
+        },
+        interactiveMessage: proto.Message.InteractiveMessage.create({
+          body: proto.Message.InteractiveMessage.Body.create({
+            text: xmenu_oh2
+          }),
+          footer: proto.Message.InteractiveMessage.Footer.create({
+            text: botname
+          }),
+          header: proto.Message.InteractiveMessage.Header.create({
+                ...(await prepareWAMessageMedia({ image : XeonWlcm}, { upload: XeonBotInc.waUploadToServer})), 
+                  title: ``,
+                  gifPlayback: true,
+                  subtitle: ownername,
+                  hasMediaAttachment: false  
+                }),
+          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+            buttons: [
+              {
+                "name": "single_select",
+                "buttonParamsJson": 
+`{"title":"MENU 🌺",
+"sections":[{"title":"${botname}",
+"rows":[
+{"header":"ALL MENU",
+"title":"All fetures of this bot",
+"id":"${prefix}allmenu"},]
+}]
+}`
+              },
+           ]
+         
+          }),
+          contextInfo: {  
+                  mentionedJid: [m.sender], 
+                  forwardingScore: 999,
+                  isForwarded: true,
+             
+                }
+        })
+    }
+  }
+},{
+  quoted: mquote,
+})
+
+await XeonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
+  messageId: msg.key.id
+}, )
+}
+}

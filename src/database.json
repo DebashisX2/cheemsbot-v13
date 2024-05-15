@@ -499,7 +499,7 @@
       "badword": 0,
       "afkReason": "",
       "nick": "~PIKUU🧿🌜",
-      "premium": "false",
+      "premium": false,
       "limit": 100,
       "totalLimit": 0
     },
@@ -906,7 +906,7 @@
       "badword": 0,
       "afkReason": "",
       "nick": "আলুপোস্ত 😋❤️",
-      "premium": "false",
+      "premium": false,
       "limit": 100,
       "totalLimit": 0
     },
@@ -1104,7 +1104,7 @@
       "badword": 0,
       "afkReason": "",
       "nick": "Debopom",
-      "premium": "false",
+      "premium": false,
       "limit": 100,
       "totalLimit": 0
     },
@@ -1159,6 +1159,138 @@
       "badword": 0,
       "afkReason": "",
       "nick": "Ray__ Amit",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919775851605@s.whatsapp.net": {
+      "serialNumber": "15b2ddaa091da58ec313d3f73b145c25",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Anshu",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917601914400@s.whatsapp.net": {
+      "serialNumber": "e4fb38754e10d1b13e17ce60babe3bdd",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "AKASH🤗",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917501510193@s.whatsapp.net": {
+      "serialNumber": "df4196f01401ceecf34182001430f16c",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Subrata Dutta😇",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "918839020885@s.whatsapp.net": {
+      "serialNumber": "59797e106bbb4ba9bc80feff5035f5d9",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Suraj",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "918918622928@s.whatsapp.net": {
+      "serialNumber": "bebbaeaedb72c7c22ee98f0906510e12",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "BACHA_CHELE ❤️🧿🌼 (Babai)",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "918240488259@s.whatsapp.net": {
+      "serialNumber": "67f0fb0551f23a8a843809a633cb3724",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "sahanisuman49128",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "918768390374@s.whatsapp.net": {
+      "serialNumber": "c052d1937c09ba9d7865eefad5f0c5e2",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Notty 😜 Manoj 💞",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919851244987@s.whatsapp.net": {
+      "serialNumber": "4e1c2c5468c9959d321177eb0fc83610",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": ".",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919004782785@s.whatsapp.net": {
+      "serialNumber": "ef021c7ee63328b382eb1b239ff6b07d",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "RIDER BOY DESHMUKH",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919883278507@s.whatsapp.net": {
+      "serialNumber": "d51eaf058e99d342ba44f1283b10900c",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "🐼🖤 \"সুদীপ\" 🖤🐼",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917407340983@s.whatsapp.net": {
+      "serialNumber": "06ad64f7b10f3324370c3f10e9962f1b",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Itz  R, A😘😘😘",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919734151558@s.whatsapp.net": {
+      "serialNumber": "c07e28bcd3f649bd1427b5e9029b79f1",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Nice",
       "premium": "false",
       "limit": 100,
       "totalLimit": 0
@@ -1561,7 +1693,7 @@
       }
     },
     "15202238877@s.whatsapp.net": {
-      "totalhit": 427,
+      "totalhit": 505,
       "totalError": 0,
       "online": false,
       "autosticker": false,
