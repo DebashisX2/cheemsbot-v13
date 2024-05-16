@@ -775,7 +775,7 @@ let { key } = await XeonBotInc.sendMessage(from, {text: 'Hi'} ,
 
 for (let i = 0; i < xeonlod.length; i++) {
 await XeonBotInc.sendMessage(from, {text: xeonlod[i], edit: key })
-await sleep(200)
+await sleep(400)
 }
 }
 	    async function handle(){
@@ -798,7 +798,7 @@ await sleep(200)
 	for (let j=0; j<10; j++){
 for (let i = 0; i < xeonlod.length; i++) {
 await XeonBotInc.sendMessage(from, {text: xeonlod[i], edit: key })
-await sleep(100)
+await sleep(400)
 }
 }
 		    var hand = [
@@ -815,6 +815,7 @@ await sleep(100)
 			    ]
 		    for (let k = 0; k < hand.length; k++) {
 await XeonBotInc.sendMessage(from, {text: hand[k], edit: key })
+await sleep(200)
 		    }
 	    }
 
@@ -846,7 +847,6 @@ async function rxns () {
     " 🙂",
     " 🥹",
     " 😊",
-    " ☺️",
     " 😛",
     " 😝",
     " 😜",
