@@ -1,1 +1,1 @@
-web: npm install && npm start
+wroker: npm install && npm start
