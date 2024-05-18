@@ -16,27 +16,28 @@ global.socialm = "GitHub: Debashis121212" //ur github or insta name
 global.location = "N. 24 parganas , WB,INDIA  " //ur location
 
 //new
-global.botname = 'AVIRUP WHATSAPP BOT' //ur bot name
-global.ownernumber = '919331218857' //ur owner number
-global.ownername = 'AVIRUP' //ur owner name
-global.websitex = "https://www.facebook.com/profile.php?id=100080752677636&mibextid=ZbWKwL"
-global.wagc = "https://chat.whatsapp.com/C4NU6KefgoLL9W8vpbhbEY"
-global.themeemoji = '📌'
-global.wm = "AVIRUP WHATSAPPBOT"
-global.botscript = 'https://github.com/DebashisX1/cheemsbot-v12' //script link
+global.botname = 'A S T R O N A U T  B O T' //ur bot name
+global.ownernumber = '918327526811' //ur owner number
+global.ownername = '𝑺𝒍𝒆𝒆𝒑𝒊𝒏𝒈...' //ur owner name
+global.websitex = "https://www.facebook.com/LeonardorickCaprio"
+global.wagc = "https://wa.me/918327526811"
+global.themeemoji = '📌🤩'
+global.wm = "A S T R O N A U T  B O T "
+global.botscript = 'https://github.com/Debashis121212/CheemsBot-MD11' //script link
 global.packname = "Sticker By"
-global.author = "Avirup\n\n+919331218857"
-global.creator = "919331218857@s.whatsapp.net"
+global.author = "𝑺𝒍𝒆𝒆𝒑𝒊𝒏𝒈..."
+global.creator = "918327526811@s.whatsapp.net"
 global.xprefix = '.'
-global.premium = ["919331218857"] // Premium User
+global.premium = ["918327526811"] // Premium User
 global.hituet = 0
+
 //bot sett
-global.typemenu = 'v10' // menu type 'v1' => 'v10'
-global.typereply = 'v3' // reply type 'v1' => 'v4'
+global.typemenu = 'v2' // menu type 'v1' => 'v8'
+global.typereply = 'v2' // reply type 'v1' => 'v3'
 global.autoblocknumber = '92' //set autoblock country code
-global.antiforeignnumber = '' //set anti foreign number country code
+global.antiforeignnumber = '91' //set anti foreign number country code
 global.welcome = true //welcome/left in groups
-global.anticall = true //bot blocks user when called
+global.anticall = false //bot blocks user when called
 global.autoswview = true //auto status/story view
 global.adminevent = true //show promote/demote message
 global.groupevent = true //show update messages in group chat
@@ -45,8 +46,8 @@ global.mess = {
 	limit: 'Your limit is up!',
 	nsfw: "গ্রুপে মেয়ে আছে, So don't do this type-এর কুটকুটি",
     done: 'Done✓',
-    error: 'Error!',
-    success: 'Here you go!'
+    error: 'Ah Fuck, Theres an error in system!',
+    success: 'Here you go! 🥳'
 }
 //thumbnail
 global.thumb = fs.readFileSync('./XeonMedia/theme/cheemspic.jpg')
