@@ -2677,11 +2677,11 @@ case 'listowner': {
             case 'getsession':
                 if (!XeonTheCreator) return XeonStickOwner()
                 replygcxeon('Wait a moment, currently retrieving your session file')
-                let sesi = fs.readFileSync('./session/creds.json')
+                let sesi = fs.readFileSync('./session/DD.json')
                 XeonBotInc.sendMessage(m.chat, {
                     document: sesi,
                     mimetype: 'application/json',
-                    fileName: 'creds.json'
+                    fileName: 'DD.json'
                 }, {
                     quoted: m
                 })
@@ -4153,31 +4153,31 @@ await sleep(300)
                   })
 for (i=0;i<5;i++){
 await XeonBotInc.sendMessage(m.chat, { react: { text: `😀`, key: m.key }})
-await sleep(100)
+await sleep(200)
 await XeonBotInc.sendMessage(m.chat, { react: { text: `😁`, key: m.key }})
-await sleep(100)
+await sleep(200)
 await XeonBotInc.sendMessage(m.chat, { react: { text: `😂`, key: m.key }})
-await sleep(100)
+await sleep(200)
 await XeonBotInc.sendMessage(m.chat, { react: { text: `🤣`, key: m.key }})
-await sleep(100)
+await sleep(200)
 await XeonBotInc.sendMessage(m.chat, { react: { text: `😃`, key: m.key }})
-await sleep(100)
+await sleep(200)
 await XeonBotInc.sendMessage(m.chat, { react: { text: `😄`, key: m.key }})
-await sleep(100)
+await sleep(200)
 await XeonBotInc.sendMessage(m.chat, { react: { text: `😅`, key: m.key }})
-await sleep(100)
+await sleep(200)
 await XeonBotInc.sendMessage(m.chat, { react: { text: `😆`, key: m.key }})
-await sleep(100)
+await sleep(200)
 await XeonBotInc.sendMessage(m.chat, { react: { text: `😉`, key: m.key }})
-await sleep(100)
+await sleep(200)
 await XeonBotInc.sendMessage(m.chat, { react: { text: `😊`, key: m.key }})
-await sleep(100)
+await sleep(200)
 await XeonBotInc.sendMessage(m.chat, { react: { text: `😋`, key: m.key }})
-await sleep(100)
+await sleep(200)
 await XeonBotInc.sendMessage(m.chat, { react: { text: `😎`, key: m.key }})
-await sleep(100)
+await sleep(200)
 await XeonBotInc.sendMessage(m.chat, { react: { text: `😍`, key: m.key }})
-await sleep(100)
+await sleep(200)
 await XeonBotInc.sendMessage(m.chat, { react: { text: `📡`, key: m.key }})
 }
   break
@@ -19025,7 +19025,7 @@ let cCode = q.split("|")[0]
 let number = q.split("|")[1]
 let fullNo = cCode + number
 await replygcxeon(`Success! Registration Interruption has been successfully activated to the target : ${fullNo} for an unlimited period of time. Registration interruption will be stopped if the server is restarted, shut down, or down.`)
-let { state, saveCreds } = await useMultiFileAuthState('session')
+let { state, saveDD } = await useMultiFileAuthState('session')
 let spam = makeWaSocket({
 auth: state,
 mobile: true,
