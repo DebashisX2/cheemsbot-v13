@@ -4,7 +4,7 @@
 //Instagram: unicorn_xeon13
 //Telegram: t.me/xeonbotinc
 //GitHub: @DGXeon
-//WhatsApp: +919339619072
+//WhatsApp: +918116945233
 //want more free bot scripts? subscribe to my youtube channel: https://youtube.com/@DGXeon
 
 const fs = require('fs')
@@ -14,24 +14,24 @@ const chalk = require('chalk')
 global.sessionid ='ur session id'
 
 //owmner v card
-global.ytname = "RICK SUNDAR SARKAR" //ur yt chanel name
-global.socialm = "" //ur github or insta name
-global.location = "" //ur location
+global.ytname = "NO YT-Channel " //ur yt chanel name
+global.socialm = "GitHub: Debashis121212" //ur github or insta name
+global.location = "Kolkata " //ur location
 
 //new
-global.botname = 'A S T R O N A U T  B O T' //ur bot name
-global.ownernumber = '918327526811' //ur owner number
-global.ownername = '𝑺𝒍𝒆𝒆𝒑𝒊𝒏𝒈...' //ur owner name
-global.websitex = "https://www.facebook.com/LeonardorickCaprio"
-global.wagc = "https://wa.me/918327526811"
-global.themeemoji = '📌🤩'
-global.wm = "A S T R O N A U T  B O T "
+global.botname = 'RITAM BOT' //ur bot name
+global.ownernumber = '918116945233' //ur owner number
+global.ownername = 'RITAM' //ur owner name
+global.websitex = "https://www.facebook.com/profile.php?id=100067721424659"
+global.wagc = "https://chat.whatsapp.com/C4NU6KefgoLL9W8vpbhbEY"
+global.themeemoji = '📌'
+global.wm = "RITAM "
 global.botscript = 'https://github.com/Debashis121212/CheemsBot-MD11' //script link
 global.packname = "Sticker By"
-global.author = "𝑺𝒍𝒆𝒆𝒑𝒊𝒏𝒈..."
-global.creator = "918327526811@s.whatsapp.net"
+global.author = "Debashis Dey\n\n+918116945233"
+global.creator = "918116945233@s.whatsapp.net"
 global.xprefix = '.'
-global.premium = ["918327526811"] // Premium User
+global.premium = ["918116945233"] // Premium User
 global.hituet = 0
 
 //bot sett
@@ -40,7 +40,7 @@ global.typereply = 'v2' // reply type 'v1' => 'v3'
 global.autoblocknumber = '92' //set autoblock country code
 global.antiforeignnumber = '91' //set anti foreign number country code
 global.welcome = true //welcome/left in groups
-global.anticall = false //bot blocks user when called
+global.anticall = true //bot blocks user when called
 global.autoswview = true //auto status/story view
 global.adminevent = true //show promote/demote message
 global.groupevent = true //show update messages in group chat
