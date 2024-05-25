@@ -292,6 +292,8 @@ XeonBotInc.sendMessage(anu.id,
                     const xeontime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
 	                const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
                 	let xeonName = num
+                    const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
+                    const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
                     let bio = await XeonBotInc.fetchStatus(num)
                     let username =XeonBotInc.getName(num)
                     const xeonmembers = metadata.participants.length
