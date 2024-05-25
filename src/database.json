@@ -1286,6 +1286,17 @@
       "premium": "false",
       "limit": 100,
       "totalLimit": 0
+    },
+    "33644632726@s.whatsapp.net": {
+      "serialNumber": "5ff7c847293bd218838fc8d455ed5d12",
+      "title": "Premium",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "+33 6 44 63 27 26",
+      "premium": "true",
+      "limit": 1000,
+      "totalLimit": 0
     }
   },
   "database": {},
@@ -1589,6 +1600,26 @@
       "antilink": false,
       "antipromotion": false,
       "antilinkgc": false
+    },
+    "33644632726@s.whatsapp.net": {
+      "badword": false,
+      "antiforeignnum": false,
+      "antibot": false,
+      "antiviewonce": false,
+      "antispam": false,
+      "antivirtex": false,
+      "antimedia": false,
+      "antiimage": false,
+      "antivideo": false,
+      "antiaudio": false,
+      "antipoll": false,
+      "antisticker": false,
+      "antilocation": false,
+      "antidocument": false,
+      "anticontact": false,
+      "antilink": false,
+      "antipromotion": false,
+      "antilinkgc": false
     }
   },
   "game": {
@@ -1715,6 +1746,37 @@
         },
         "owner": {
           "nick": "+91 69091 37213",
+          "alias": "919339619072"
+        }
+      }
+    },
+    "33644632726@s.whatsapp.net": {
+      "totalhit": 30,
+      "totalError": 0,
+      "online": false,
+      "autosticker": false,
+      "autodownload": false,
+      "autobio": false,
+      "autoread": false,
+      "autoblocknum": false,
+      "onlyindia": false,
+      "onlyindo": false,
+      "onlygrub": false,
+      "onlypc": false,
+      "autorecordtype": false,
+      "autorecord": false,
+      "autotype": false,
+      "watermark": {
+        "packname": "Sticker By",
+        "author": "Debashis Dey\n\n+919339619072"
+      },
+      "about": {
+        "bot": {
+          "nick": "+33 6 44 63 27 26",
+          "alias": "꧁﴿»✥«·-𝕯𝕯 𝕮𝖍𝖊𝖊𝖒𝖘-𝕭𝖔𝖙-·»✥«﴾꧂"
+        },
+        "owner": {
+          "nick": "+91 93396 19072",
           "alias": "919339619072"
         }
       }
