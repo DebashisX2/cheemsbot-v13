@@ -735,12 +735,13 @@ return m.reply("Erro..")
 
 async function introduction ()
 {
+	let mess = `Give me your Intro. Please`
   let intro = { key: 
     { fromMe: false, 
       participant: m.sender, 
-      remoteJid: m.sender },
+      remoteJid: 'status@broadcast' },
      message: {extendedTextMessage: 
-              { text: m}
+              { text: mess}
     }}
     let user=m.sender
     let username =XeonBotInc.getName(user)
