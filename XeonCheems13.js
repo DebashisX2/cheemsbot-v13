@@ -779,7 +779,7 @@ async function introduction ()
     
 let { key } = await XeonBotInc.sendMessage(from, {text: 'Hi'} ,
 {
-    quoted: Intro
+    quoted: intro
 })
 
 for (let i = 0; i < xeonlod.length; i++) {
