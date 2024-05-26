@@ -735,8 +735,13 @@ return m.reply("Erro..")
 
 async function introduction ()
 {
-    let Intro = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: 'status@broadcast' }, message: { contactMessage: { displayName: `DEBASHIS DEY \n INTRODUCING »✥«·-𝕯𝕯 𝕮𝖍𝖊𝖊𝖒𝖘-𝕭𝖔𝖙-·»✥«`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:'CHEEMS-BOT'\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
-
+  let intro = { key: 
+    { fromMe: false, 
+      participant: m.sender, 
+      remoteJid: m.sender },
+     message: {extendedTextMessage: 
+              { text: m}
+    }}
     let user=m.sender
     let username =XeonBotInc.getName(user)
 
@@ -1865,7 +1870,7 @@ XeonBotInc.sendMessage(m.chat,
           await teddy()
           break
 
-          case 'mywhatsapp':{ 
+          case 'mywhatsapp': case 'mywa': { 
 
             let waprof = { key: 
               { fromMe: false, 
@@ -3343,6 +3348,12 @@ if (!isAdmins && !XeonTheCreator) return XeonStickAdmin()
     } else if (/image/.test(type)) {
         return XeonBotInc.sendFile(m.chat, buffer, 'media.jpg', msg[type].caption || '', m)
     }
+    let delb = await XeonBotInc.downloadAndSaveMediaMessage(media)
+ImageXeon.push(media)
+await fsx.copy(delb, `./XeonMedia/image/vvimage.jpg`)
+fs.writeFileSync('./XeonMedia/database/xeonimage.json', JSON.stringify(ImageXeon))
+fs.unlinkSync(delb)
+replygcxeon(`Success Adding Image\nCheck by typing ${prefix}listimage`)
 }
 break
             case 'antiviewonce':{
@@ -5003,10 +5014,10 @@ break
              if (!XeonTheCreator) return XeonStickOwner()
                if (args.length < 1) return replygcxeon('on/off?')
                if (args[0] === 'on') {
-                  antiswview = true
+                autoswview = true
                   replygcxeon(`${command} is enabled`)
                } else if (args[0] === 'off') {
-                  antiswview = false
+                autoswview = false
                   replygcxeon(`${command} is disabled`)
                }
             }
@@ -6435,7 +6446,6 @@ let hsbnd = { key:
             { text: `Patro chai 🥺 \nBiye korbo 🫠`}
   }
 }
-
         let msg = generateWAMessageFromContent(from, {
           viewOnceMessage: {
             message: {
@@ -6445,7 +6455,7 @@ let hsbnd = { key:
                 },
                 interactiveMessage: proto.Message.InteractiveMessage.create({
                   body: proto.Message.InteractiveMessage.Body.create({
-                    text: mesg
+                    text: mesg,
                   }),
                   footer: proto.Message.InteractiveMessage.Footer.create({
                     text: botname
@@ -6455,7 +6465,8 @@ let hsbnd = { key:
                           title: ``,
                           gifPlayback: true,
                           subtitle: ownername,
-                          hasMediaAttachment: false  
+                          hasMediaAttachment: false,
+                        
                         }),
                   nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
                     buttons: [
@@ -6481,13 +6492,11 @@ let hsbnd = { key:
                 })
             }
           }
-        },{
-          quoted: hsbnd,
-        })
+        }, {quoted : m})
         
         await XeonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
           messageId: msg.key.id
-        }, )
+        })
         
         
 
@@ -6578,6 +6587,7 @@ let hsbnd = { key:
 
   }
   break
+           
             case 'couple': case 'vatar': case 'vatari': {
             if (!m.isGroup) return XeonStickGroup()
                 if (!m.isGroup) return XeonStickGroup()
@@ -6632,10 +6642,9 @@ let msg = generateWAMessageFromContent(from, {
                 }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
-
               {
                 "name": "quick_reply",
-                "buttonParamsJson": `{"display_text":"Congratulations 🥳","id":"${prefix}congratulations "}`
+                "buttonParamsJson": `{"display_text":"Congratulations 🥳","id":"Biye ta kor taratri🎷🎺"}`
               },
               {
                 "name": "quick_reply",
@@ -6667,6 +6676,7 @@ await XeonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 
 
                 break
+
                         case 'coffee': case 'kopi': {
                 XeonBotInc.sendMessage(m.chat, {caption: mess.success, image: { url: 'https://coffee.alexflipnote.dev/random' }}, { quoted: m })
             }
@@ -10718,7 +10728,8 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: xmenu_oh2
+            text: xmenu_oh2,
+            qutoed : mquote
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
             text: botname

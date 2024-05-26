@@ -1327,6 +1327,50 @@
       "premium": "false",
       "limit": 100,
       "totalLimit": 0
+    },
+    "919749837183@s.whatsapp.net": {
+      "serialNumber": "575a31c9e56fa902422143a2f53edddb",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "~👻 ATIF",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917076359598@s.whatsapp.net": {
+      "serialNumber": "c0f113101451dbdc6a0d9f972a721377",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "᭄ℳ𝒿ℓᎯŋ..😌❤️",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "916230430463@s.whatsapp.net": {
+      "serialNumber": "0e67614d37248bd73fc0b81938fb7eb8",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "~Sneha~❤️",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919330064843@s.whatsapp.net": {
+      "serialNumber": "421623837ad47290a4e14a59e05bc775",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Mr.গরিব মানুষ🫠❤‍🩹",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
     }
   },
   "chats": {
@@ -1777,7 +1821,7 @@
       }
     },
     "33644632726@s.whatsapp.net": {
-      "totalhit": 85,
+      "totalhit": 185,
       "totalError": 0,
       "online": false,
       "autosticker": false,
