@@ -735,12 +735,13 @@ return m.reply("Erro..")
 
 async function introduction ()
 {
+	let mess = `Give me your Intro. Please`
   let intro = { key: 
     { fromMe: false, 
       participant: m.sender, 
-      remoteJid: m.sender },
+      remoteJid: 'status@broadcast' },
      message: {extendedTextMessage: 
-              { text: m}
+              { text: mess}
     }}
     let user=m.sender
     let username =XeonBotInc.getName(user)
@@ -779,7 +780,7 @@ async function introduction ()
     
 let { key } = await XeonBotInc.sendMessage(from, {text: 'Hi'} ,
 {
-    quoted: Intro
+    quoted: intro
 })
 
 for (let i = 0; i < xeonlod.length; i++) {
@@ -3721,7 +3722,7 @@ break
                 break
             case 'promote':
                 if (!m.isGroup) return XeonStickGroup()
-                if (!isAdmins && !isGroupOwner && !XeonTheCreator) return XeonStickAdmin()
+                if (!isGroupOwner && !XeonTheCreator) return XeonStickAdmin()
                 if (!isBotAdmins) return XeonStickBotAdmin()
                 let blockwwwww = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
                 await XeonBotInc.groupParticipantsUpdate(m.chat, [blockwwwww], 'promote')
