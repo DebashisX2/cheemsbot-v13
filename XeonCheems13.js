@@ -735,13 +735,12 @@ return m.reply("Erro..")
 
 async function introduction ()
 {
-	let mess = `Give me your Intro. Please`
   let intro = { key: 
     { fromMe: false, 
       participant: m.sender, 
-      remoteJid: 'status@broadcast' },
+      remoteJid: m.sender },
      message: {extendedTextMessage: 
-              { text: mess}
+              { text: m}
     }}
     let user=m.sender
     let username =XeonBotInc.getName(user)
@@ -780,7 +779,7 @@ async function introduction ()
     
 let { key } = await XeonBotInc.sendMessage(from, {text: 'Hi'} ,
 {
-    quoted: intro
+    quoted: Intro
 })
 
 for (let i = 0; i < xeonlod.length; i++) {
@@ -3722,7 +3721,7 @@ break
                 break
             case 'promote':
                 if (!m.isGroup) return XeonStickGroup()
-                if (!isGroupOwner && !XeonTheCreator) return XeonStickAdmin()
+                if (!isAdmins && !isGroupOwner && !XeonTheCreator) return XeonStickAdmin()
                 if (!isBotAdmins) return XeonStickBotAdmin()
                 let blockwwwww = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
                 await XeonBotInc.groupParticipantsUpdate(m.chat, [blockwwwww], 'promote')
@@ -10897,353 +10896,354 @@ else if (typemenu === 'v13') {
                 
 
 
-  let msg = generateWAMessageFromContent(m.chat, {
-    viewOnceMessage: {
-        message: {
-            messageContextInfo: {
-                deviceListMetadata: {},
-                deviceListMetadataVersion: 2
-            },
-            interactiveMessage: proto.Message.InteractiveMessage.fromObject({
-                body: proto.Message.InteractiveMessage.Body.fromObject({
-                    text: "IkyyBotz - Menu"
-                }),
-                footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                    text: "\nHi 👋, I am a WhatsApp MultiDevice Bot that will help with daily activities via WhatsApp.\n You can use me to download videos, listen to songs, create stickers, etc."
-                }),
-                header: proto.Message.InteractiveMessage.Header.fromObject({
-                    title: "IkyyBotz",
-                    subtitle: "Menu Ikyy-Botz",
-                    hasMediaAttachment: false
-                }),
-                carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({
-                    cards: [
-                        {
-                          body: proto.Message.InteractiveMessage.Body.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                              text: "controlpanel"
-                          }),
-                          header: proto.Message.InteractiveMessage.Header.fromObject({
-                              title: `Menu Control Panel`,
-                              hasMediaAttachment: true,
-                              imageMessage: XeonWlcm
-                          }),
-                          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-                              buttons: [
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                  }
-                              ]
-                          })
+                const msg = generateWAMessageFromContent(m.chat, {
+                  viewOnceMessage: {
+                    message: {
+                      "messageContextInfo": {
+                        "deviceListMetadata": {},
+                        "deviceListMetadataVersion": 2
                       },
-                      {
-                          body: proto.Message.InteractiveMessage.Body.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          header: proto.Message.InteractiveMessage.Header.fromObject({
-                              title: `Menu Panel`,
-                              hasMediaAttachment: true,
-                              imageMessage: XeonWlcm
-                          }),
-                          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-                              buttons: [
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                  }
-                              ]
-                          })
-                      },
-                        {
-                            body: proto.Message.InteractiveMessage.Body.fromObject({
-                                text: xmenu_oh2
-                            }),
-                            footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                                text: xmenu_oh2
-                            }),
-                            header: proto.Message.InteractiveMessage.Header.fromObject({
-                                title: `Menu Owner`,
-                                hasMediaAttachment: true,
-                                imageMessage: XeonWlcm
-                            }),
-                            nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-                                buttons: [
-                                    {
-                                        name: "quick_reply",
-                                        buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
+                      interactiveMessage: proto.Message.InteractiveMessage.create({
+                        body: proto.Message.InteractiveMessage.Body.create({
+                          text: xmenu_oh2,
+                          qutoed : mquote
+                        }),
+                        footer: proto.Message.InteractiveMessage.Footer.create({
+                          text: botname
+                        }),
+                              header: proto.Message.InteractiveMessage.Header.fromObject({
+                                  title: "IkyyBotz",
+                                  subtitle: "Menu Ikyy-Botz",
+                                  hasMediaAttachment: false
+                              }),
+                              carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({
+                                  cards: [
+                                      {
+                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                            text: `By AraBotz`
+                                        }),
+                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                            text: "controlpanel"
+                                        }),
+                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                            title: `Menu Control Panel`,
+                                            hasMediaAttachment: true,
+                                            imageMessage: XeonWlcm
+                                        }),
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                            buttons: [
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
+                                                }
+                                            ]
+                                        })
                                     },
                                     {
-                                        name: "quick_reply",
-                                        buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
+                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                            text: `By AraBotz`
+                                        }),
+                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                            text: "menupanel"
+                                        }),
+                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                            title: `Menu Panel`,
+                                            hasMediaAttachment: true,
+                                            imageMessage: XeonWlcm
+                                        }),
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                            buttons: [
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
+                                                }
+                                            ]
+                                        })
+                                    },
+                                      {
+                                          body: proto.Message.InteractiveMessage.Body.fromObject({
+                                              text: `By AraBotz`
+                                          }),
+                                          footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                              text: "menuowner"
+                                          }),
+                                          header: proto.Message.InteractiveMessage.Header.fromObject({
+                                              title: `Menu Owner`,
+                                              hasMediaAttachment: true,
+                                              imageMessage: XeonWlcm
+                                          }),
+                                          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                              buttons: [
+                                                  {
+                                                      name: "quick_reply",
+                                                      buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
+                                                  },
+                                                  {
+                                                      name: "quick_reply",
+                                                      buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
+                                                  },
+                                                  {
+                                                      name: "quick_reply",
+                                                      buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
+                                                  }
+                                              ]
+                                          })
+                                      },
+                                      {
+                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                            text: `By AraBotz`
+                                        }),
+                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                            text: "menushop"
+                                        }),
+                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                            title: `Menu Shop`,
+                                            hasMediaAttachment: true,
+                                            imageMessage: XeonWlcm
+                                        }),
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                            buttons: [
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
+                                                }
+                                            ]
+                                        })
                                     },
                                     {
-                                        name: "quick_reply",
-                                        buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
+                                      body: proto.Message.InteractiveMessage.Body.fromObject({
+                                          text: `By AraBotz`
+                                      }),
+                                      footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                          text: "menugrup"
+                                      }),
+                                      header: proto.Message.InteractiveMessage.Header.fromObject({
+                                          title: `Menu Group`,
+                                          hasMediaAttachment: true,
+                                          imageMessage: XeonWlcm
+                                      }),
+                                      nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                          buttons: [
+                                              {
+                                                  name: "quick_reply",
+                                                  buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
+                                              },
+                                              {
+                                                  name: "quick_reply",
+                                                  buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
+                                              },
+                                              {
+                                                  name: "quick_reply",
+                                                  buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
+                                              }
+                                          ]
+                                      })
+                                  },
+                                  {
+                                    body: proto.Message.InteractiveMessage.Body.fromObject({
+                                        text: `By AraBotz`
+                                    }),
+                                    footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                        text: "menustorage"
+                                    }),
+                                    header: proto.Message.InteractiveMessage.Header.fromObject({
+                                        title: `Menu Storage`,
+                                        hasMediaAttachment: true,
+                                        imageMessage: XeonWlcm
+                                    }),
+                                    nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                        buttons: [
+                                            {
+                                                name: "quick_reply",
+                                                buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
+                                            },
+                                            {
+                                                name: "quick_reply",
+                                                buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
+                                            },
+                                            {
+                                                name: "quick_reply",
+                                                buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
+                                            }
+                                        ]
+                                    })
+                                },
+                                {
+                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                            text: `By AraBotz`
+                                        }),
+                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                            text: "menutools"
+                                        }),
+                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                            title: `Menu Tools`,
+                                            hasMediaAttachment: true,
+                                            imageMessage: XeonWlcm
+                                        }),
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                            buttons: [
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
+                                                }
+                                            ]
+                                        })
+                                    },
+                                    {
+                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                            text: `By AraBotz`
+                                        }),
+                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                            text: "menudownload"
+                                        }),
+                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                            title: `Menu Download`,
+                                            hasMediaAttachment: true,
+                                            imageMessage: XeonWlcm
+                                        }),
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                            buttons: [
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
+                                                }
+                                            ]
+                                        })
+                                    },
+                                    {
+                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                            text: `By AraBotz`
+                                        }),
+                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                            text: "menuconvert"
+                                        }),
+                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                            title: `Menu Convert`,
+                                            hasMediaAttachment: true,
+                                            imageMessage: XeonWlcm
+                                        }),
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                            buttons: [
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
+                                                }
+                                            ]
+                                        })
+                                    },
+                                    {
+                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                            text: `By AraBotz`
+                                        }),
+                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                            text: "menusticker"
+                                        }),
+                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                            title: `Menu Sticker`,
+                                            hasMediaAttachment: true,
+                                            imageMessage: XeonWlcm
+                                        }),
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                            buttons: [
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
+                                                }
+                                            ]
+                                        })
+                                    },
+                                    
+                                    {
+                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                            text: `By AraBotz`
+                                        }),
+                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                            text: "menuother"
+                                        }),
+                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                            title: `Menu Other`,
+                                            hasMediaAttachment: true,
+                                            imageMessage: XeonWlcm
+                                        }),
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                            buttons: [
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
+                                                },
+                                                {
+                                                    name: "quick_reply",
+                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
+                                                }
+                                            ]
+                                        })
                                     }
-                                ]
-                            })
-                        },
-                        {
-                          body: proto.Message.InteractiveMessage.Body.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          header: proto.Message.InteractiveMessage.Header.fromObject({
-                              title: `Menu Shop`,
-                              hasMediaAttachment: true,
-                              imageMessage: XeonWlcm
-                          }),
-                          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-                              buttons: [
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                  }
-                              ]
-                          })
-                      },
-                      {
-                        body: proto.Message.InteractiveMessage.Body.fromObject({
-                            text: xmenu_oh2
-                        }),
-                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                            text: xmenu_oh2
-                        }),
-                        header: proto.Message.InteractiveMessage.Header.fromObject({
-                            title: `Menu Group`,
-                            hasMediaAttachment: true,
-                            imageMessage: XeonWlcm
-                        }),
-                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-                            buttons: [
-                                {
-                                    name: "quick_reply",
-                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                },
-                                {
-                                    name: "quick_reply",
-                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                },
-                                {
-                                    name: "quick_reply",
-                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                }
-                            ]
-                        })
-                    },
-                    {
-                      body: proto.Message.InteractiveMessage.Body.fromObject({
-                          text: xmenu_oh2
-                      }),
-                      footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                          text: xmenu_oh2
-                      }),
-                      header: proto.Message.InteractiveMessage.Header.fromObject({
-                          title: `Menu Storage`,
-                          hasMediaAttachment: true,
-                          imageMessage: XeonWlcm
-                      }),
-                      nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-                          buttons: [
-                              {
-                                  name: "quick_reply",
-                                  buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                              },
-                              {
-                                  name: "quick_reply",
-                                  buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                              },
-                              {
-                                  name: "quick_reply",
-                                  buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                              }
-                          ]
-                      })
-                  },
-                  {
-                          body: proto.Message.InteractiveMessage.Body.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          header: proto.Message.InteractiveMessage.Header.fromObject({
-                              title: `Menu Tools`,
-                              hasMediaAttachment: true,
-                              imageMessage: XeonWlcm
-                          }),
-                          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-                              buttons: [
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                  }
-                              ]
-                          })
-                      },
-                      {
-                          body: proto.Message.InteractiveMessage.Body.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          header: proto.Message.InteractiveMessage.Header.fromObject({
-                              title: `Menu Download`,
-                              hasMediaAttachment: true,
-                              imageMessage: XeonWlcm
-                          }),
-                          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-                              buttons: [
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                  }
-                              ]
-                          })
-                      },
-                      {
-                          body: proto.Message.InteractiveMessage.Body.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          header: proto.Message.InteractiveMessage.Header.fromObject({
-                              title: `Menu Convert`,
-                              hasMediaAttachment: true,
-                              imageMessage: XeonWlcm
-                          }),
-                          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-                              buttons: [
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                  }
-                              ]
-                          })
-                      },
-                      {
-                          body: proto.Message.InteractiveMessage.Body.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          header: proto.Message.InteractiveMessage.Header.fromObject({
-                              title: `Menu Sticker`,
-                              hasMediaAttachment: true,
-                              imageMessage: XeonWlcm
-                          }),
-                          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-                              buttons: [
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                  }
-                              ]
-                          })
-                      },
-                      
-                      {
-                          body: proto.Message.InteractiveMessage.Body.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                              text: xmenu_oh2
-                          }),
-                          header: proto.Message.InteractiveMessage.Header.fromObject({
-                              title: `Menu Other`,
-                              hasMediaAttachment: true,
-                              imageMessage: XeonWlcm
-                          }),
-                          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-                              buttons: [
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                  },
-                                  {
-                                      name: "quick_reply",
-                                      buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                  }
-                              ]
+                                  ]
+                              })
                           })
                       }
-                    ]
-                })
-            })
-        }
-    }
-}, {});
+                  }
+              }, {});
 
 await XeonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
     messageId: msg.key.id

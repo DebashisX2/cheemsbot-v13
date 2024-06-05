@@ -1,12 +1,4 @@
 {
-  "sticker": {},
-  "database": {},
-  "game": {
-    "math": []
-  },
-  "others": {
-    "vote": []
-  },
   "users": {
     "919366316018@s.whatsapp.net": {
       "serialNumber": "5748ef2731f9b0ab993964d915670166",
@@ -1371,8 +1363,42 @@
       "premium": "false",
       "limit": 100,
       "totalLimit": 0
+    },
+    "62856975280889@s.whatsapp.net": {
+      "serialNumber": "ec94234002338d5792541886aecdd0b5",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "hey",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "918967500467@s.whatsapp.net": {
+      "serialNumber": "4afde49f77a5578199ff24ead77bb7e6",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Debanjan Datta",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919907134017@s.whatsapp.net": {
+      "serialNumber": "8088dae984e69316bbd56c0d402aea4c",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "🤍",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
     }
   },
+  "database": {},
   "chats": {
     "120363047626537933@g.us": {
       "badword": false,
@@ -1693,7 +1719,50 @@
       "antilink": false,
       "antipromotion": false,
       "antilinkgc": false
+    },
+    "62856975280889@s.whatsapp.net": {
+      "badword": false,
+      "antiforeignnum": false,
+      "antibot": false,
+      "antiviewonce": true,
+      "antispam": false,
+      "antivirtex": false,
+      "antimedia": false,
+      "antiimage": false,
+      "antivideo": false,
+      "antiaudio": false,
+      "antipoll": false,
+      "antisticker": false,
+      "antilocation": false,
+      "antidocument": false,
+      "anticontact": false,
+      "antilink": false,
+      "antipromotion": false,
+      "antilinkgc": false
+    },
+    "120363046514339274@g.us": {
+      "badword": false,
+      "antiforeignnum": false,
+      "antibot": false,
+      "antiviewonce": true,
+      "antispam": false,
+      "antivirtex": false,
+      "antimedia": false,
+      "antiimage": false,
+      "antivideo": false,
+      "antiaudio": false,
+      "antipoll": false,
+      "antisticker": false,
+      "antilocation": false,
+      "antidocument": false,
+      "anticontact": false,
+      "antilink": false,
+      "antipromotion": false,
+      "antilinkgc": false
     }
+  },
+  "game": {
+    "math": []
   },
   "settings": {
     "919366316018@s.whatsapp.net": {
@@ -1790,7 +1859,7 @@
       }
     },
     "15202238877@s.whatsapp.net": {
-      "totalhit": 519,
+      "totalhit": 571,
       "totalError": 0,
       "online": false,
       "autosticker": false,
@@ -1852,5 +1921,9 @@
       }
     }
   },
-  "message": {}
+  "message": {},
+  "sticker": {},
+  "others": {
+    "vote": []
+  }
 }
