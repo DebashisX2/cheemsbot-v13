@@ -14,7 +14,11 @@ const chalk = require('chalk')
 global.ytname = "NO YT-Channel " //ur yt chanel name
 global.socialm = "GitHub: Debashis121212" //ur github or insta name
 global.location = "Nalhati, Birbhum, WB,INDIA  " //ur location
-
+global.fbprofile = 'https://www.facebook.com/Debashi.Dey.X1/'
+global.igprofile = 'https://www.instagram.com/debashis_x1/'
+global.gitprof = 'https://github.com/DebashisX2/'
+global.tg = 'https://t.me/Debashis_005'
+global.walink = 'https://wa.me/qr/ZPZ7Z6WYJ752O1'
 //new
 global.botname = '꧁﴿»✥«·-𝕯𝕯 𝕮𝖍𝖊𝖊𝖒𝖘-𝕭𝖔𝖙-·»✥«﴾꧂' //ur bot name
 global.ownernumber = '919339619072' //ur owner number

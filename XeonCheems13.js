@@ -1827,28 +1827,34 @@ case 'deldp':{
   replygcxeon(teks)
   }
   break
-case 'username':
-  {
-     let user= m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') 
-     let username =XeonBotInc.getName(user)
-     console.log(json)
-     const res = json[0]
-let message =`your username is ${username}`
-XeonBotInc.sendMessage(m.chat,
-  { text: message,
-   contextInfo:{
-           "externalAdReply": {"showAdAttribution": true,
-           "containsAutoReply": true,
-           "title": ` ${global.botname}`,
-           "body": `${ownername}`,
-           "previewType": "PHOTO",
-          "thumbnailUrl": ``,
-          "thumbnail": XeonWlcm,
-           "sourceUrl": `${websitex}`}
-              }
-  })
-  }
-  break
+  case 'username':
+    {
+       let user= m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' 
+        username =XeonBotInc.getName(user)
+        
+  try {
+    ppuser = await XeonBotInc.profilePictureUrl(num, 'image')
+    } catch (err) {
+    ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
+    }
+       let XeonWlcm = await getBuffer(ppuser)
+  
+  let message =`your username is ${username}`
+  XeonBotInc.sendMessage(m.chat,
+    { text: message,
+     contextInfo:{
+             "externalAdReply": {"showAdAttribution": true,
+             "containsAutoReply": true,
+             "title": ` ${global.botname}`,
+             "body": `${ownername}`,
+             "previewType": "PHOTO",
+            "thumbnailUrl": XeonWlcm,
+            "thumbnail": '',
+             "sourceUrl": `${websitex}`}
+                }
+    })
+    }
+    break
   case 'emojies':
       await rxns()
       break
@@ -1888,7 +1894,7 @@ XeonBotInc.sendMessage(m.chat,
               }
               XeonWlcm = await getBuffer(ppuser)
            
-              let mywhatsapp = 'https://wa.me/qr/ZPZ7Z6WYJ752O1'
+              let mywhatsapp = walink
             XeonBotInc.sendMessage(m.chat,
             { text: 'click on the context info to get redirected to my Whatsapp ',
               contextInfo:{
@@ -1926,7 +1932,7 @@ XeonBotInc.sendMessage(m.chat,
               }
               XeonWlcm = await getBuffer(ppuser)
 
-            let fbprofile = 'https://www.facebook.com/Debashi.Dey.X1'
+            let face = fbprofile
             XeonBotInc.sendMessage(m.chat,
               { text: 'click on the context info to get redirected to my Facebook ',
               contextInfo:{
@@ -1935,7 +1941,7 @@ XeonBotInc.sendMessage(m.chat,
                     title: botname,
                     body: ownername,
                     thumbnail: XeonWlcm,
-                    sourceUrl: fbprofile,
+                    sourceUrl: face,
                     mediaType: 1,
                     renderLargerThumbnail: true
 
@@ -1963,7 +1969,7 @@ XeonBotInc.sendMessage(m.chat,
               }
               XeonWlcm = await getBuffer(ppuser)
 
-            let myig = 'https://www.instagram.com/debashis_x1/'
+            let myig = igprofile
             XeonBotInc.sendMessage(m.chat,
               { text: 'click on the context info to get redirected to my Instagram ',
               contextInfo:{
@@ -2000,7 +2006,7 @@ XeonBotInc.sendMessage(m.chat,
             }
             XeonWlcm = await getBuffer(ppuser)
 
-            let mygithub = 'https://github.com/Debashis121212'
+            let mygithub = gitprof
             XeonBotInc.sendMessage(m.chat,
               { text: 'click on the context info to get redirected to my GitHub ',
               contextInfo:{
@@ -2038,7 +2044,7 @@ XeonBotInc.sendMessage(m.chat,
               }
               XeonWlcm = await getBuffer(ppuser)
 
-            let mytelegram = 'https://t.me/Debashis_005'
+            let mytelegram = tg
             XeonBotInc.sendMessage(m.chat,
               { text: 'click on the context info to get redirected to my Telegram ',
               contextInfo:{

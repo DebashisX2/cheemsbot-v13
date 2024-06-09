@@ -1,4 +1,12 @@
 {
+  "sticker": {},
+  "database": {},
+  "game": {
+    "math": []
+  },
+  "others": {
+    "vote": []
+  },
   "users": {
     "919366316018@s.whatsapp.net": {
       "serialNumber": "5748ef2731f9b0ab993964d915670166",
@@ -1327,7 +1335,7 @@
       "badword": 0,
       "afkReason": "",
       "nick": "~👻 ATIF",
-      "premium": "false",
+      "premium": false,
       "limit": 100,
       "totalLimit": 0
     },
@@ -1396,9 +1404,19 @@
       "premium": "false",
       "limit": 100,
       "totalLimit": 0
+    },
+    "61488878802@s.whatsapp.net": {
+      "serialNumber": "93704e054c2a7c7f4ec3093f8945647e",
+      "title": "Premium",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "No Name",
+      "premium": "true",
+      "limit": 1000,
+      "totalLimit": 0
     }
   },
-  "database": {},
   "chats": {
     "120363047626537933@g.us": {
       "badword": false,
@@ -1759,10 +1777,27 @@
       "antilink": false,
       "antipromotion": false,
       "antilinkgc": false
+    },
+    "61488878802@s.whatsapp.net": {
+      "badword": false,
+      "antiforeignnum": false,
+      "antibot": false,
+      "antiviewonce": true,
+      "antispam": false,
+      "antivirtex": false,
+      "antimedia": false,
+      "antiimage": false,
+      "antivideo": false,
+      "antiaudio": false,
+      "antipoll": false,
+      "antisticker": false,
+      "antilocation": false,
+      "antidocument": false,
+      "anticontact": false,
+      "antilink": false,
+      "antipromotion": false,
+      "antilinkgc": false
     }
-  },
-  "game": {
-    "math": []
   },
   "settings": {
     "919366316018@s.whatsapp.net": {
@@ -1919,11 +1954,38 @@
           "alias": "919339619072"
         }
       }
+    },
+    "61488878802@s.whatsapp.net": {
+      "totalhit": 29,
+      "totalError": 0,
+      "online": false,
+      "autosticker": false,
+      "autodownload": false,
+      "autobio": false,
+      "autoread": false,
+      "autoblocknum": false,
+      "onlyindia": false,
+      "onlyindo": false,
+      "onlygrub": false,
+      "onlypc": false,
+      "autorecordtype": false,
+      "autorecord": false,
+      "autotype": false,
+      "watermark": {
+        "packname": "Sticker By",
+        "author": "Debashis Dey\n\n+919339619072"
+      },
+      "about": {
+        "bot": {
+          "nick": "No Name",
+          "alias": "꧁﴿»✥«·-𝕯𝕯 𝕮𝖍𝖊𝖊𝖒𝖘-𝕭𝖔𝖙-·»✥«﴾꧂"
+        },
+        "owner": {
+          "nick": "+91 93396 19072",
+          "alias": "919339619072"
+        }
+      }
     }
   },
-  "message": {},
-  "sticker": {},
-  "others": {
-    "vote": []
-  }
+  "message": {}
 }
