@@ -10917,26 +10917,26 @@ else if (typemenu === 'v13') {
                         footer: proto.Message.InteractiveMessage.Footer.create({
                           text: botname
                         }),
-                              header: proto.Message.InteractiveMessage.Header.fromObject({
+                              header: proto.Message.InteractiveMessage.Header.create({
                                   title: "IkyyBotz",
                                   subtitle: "Menu Ikyy-Botz",
                                   hasMediaAttachment: false
                               }),
-                              carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({
+                              carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.create({
                                   cards: [
                                       {
-                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                        body: proto.Message.InteractiveMessage.Body.create({
                                             text: `By AraBotz`
                                         }),
-                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                        footer: proto.Message.InteractiveMessage.Footer.create({
                                             text: "controlpanel"
                                         }),
-                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                        header: proto.Message.InteractiveMessage.Header.create({
                                             title: `Menu Control Panel`,
                                             hasMediaAttachment: true,
                                             imageMessage: XeonWlcm
                                         }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
                                             buttons: [
                                                 {
                                                     name: "quick_reply",
@@ -10954,18 +10954,18 @@ else if (typemenu === 'v13') {
                                         })
                                     },
                                     {
-                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                        body: proto.Message.InteractiveMessage.Body.create({
                                             text: `By AraBotz`
                                         }),
-                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                        footer: proto.Message.InteractiveMessage.Footer.create({
                                             text: "menupanel"
                                         }),
-                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                        header: proto.Message.InteractiveMessage.Header.create({
                                             title: `Menu Panel`,
                                             hasMediaAttachment: true,
                                             imageMessage: XeonWlcm
                                         }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
                                             buttons: [
                                                 {
                                                     name: "quick_reply",
@@ -10983,18 +10983,18 @@ else if (typemenu === 'v13') {
                                         })
                                     },
                                       {
-                                          body: proto.Message.InteractiveMessage.Body.fromObject({
+                                          body: proto.Message.InteractiveMessage.Body.create({
                                               text: `By AraBotz`
                                           }),
-                                          footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                          footer: proto.Message.InteractiveMessage.Footer.create({
                                               text: "menuowner"
                                           }),
-                                          header: proto.Message.InteractiveMessage.Header.fromObject({
+                                          header: proto.Message.InteractiveMessage.Header.create({
                                               title: `Menu Owner`,
                                               hasMediaAttachment: true,
                                               imageMessage: XeonWlcm
                                           }),
-                                          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
                                               buttons: [
                                                   {
                                                       name: "quick_reply",
@@ -11012,18 +11012,18 @@ else if (typemenu === 'v13') {
                                           })
                                       },
                                       {
-                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                        body: proto.Message.InteractiveMessage.Body.create({
                                             text: `By AraBotz`
                                         }),
-                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                        footer: proto.Message.InteractiveMessage.Footer.create({
                                             text: "menushop"
                                         }),
-                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                        header: proto.Message.InteractiveMessage.Header.create({
                                             title: `Menu Shop`,
                                             hasMediaAttachment: true,
                                             imageMessage: XeonWlcm
                                         }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
                                             buttons: [
                                                 {
                                                     name: "quick_reply",
@@ -11041,18 +11041,18 @@ else if (typemenu === 'v13') {
                                         })
                                     },
                                     {
-                                      body: proto.Message.InteractiveMessage.Body.fromObject({
+                                      body: proto.Message.InteractiveMessage.Body.create({
                                           text: `By AraBotz`
                                       }),
-                                      footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                      footer: proto.Message.InteractiveMessage.Footer.create({
                                           text: "menugrup"
                                       }),
-                                      header: proto.Message.InteractiveMessage.Header.fromObject({
+                                      header: proto.Message.InteractiveMessage.Header.create({
                                           title: `Menu Group`,
                                           hasMediaAttachment: true,
                                           imageMessage: XeonWlcm
                                       }),
-                                      nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                      nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
                                           buttons: [
                                               {
                                                   name: "quick_reply",
@@ -11070,18 +11070,18 @@ else if (typemenu === 'v13') {
                                       })
                                   },
                                   {
-                                    body: proto.Message.InteractiveMessage.Body.fromObject({
+                                    body: proto.Message.InteractiveMessage.Body.create({
                                         text: `By AraBotz`
                                     }),
-                                    footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                    footer: proto.Message.InteractiveMessage.Footer.create({
                                         text: "menustorage"
                                     }),
-                                    header: proto.Message.InteractiveMessage.Header.fromObject({
+                                    header: proto.Message.InteractiveMessage.Header.create({
                                         title: `Menu Storage`,
                                         hasMediaAttachment: true,
                                         imageMessage: XeonWlcm
                                     }),
-                                    nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                    nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
                                         buttons: [
                                             {
                                                 name: "quick_reply",
@@ -11099,13 +11099,13 @@ else if (typemenu === 'v13') {
                                     })
                                 },
                                 {
-                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                        body: proto.Message.InteractiveMessage.Body.create({
                                             text: `By AraBotz`
                                         }),
-                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                        footer: proto.Message.InteractiveMessage.Footer.create({
                                             text: "menutools"
                                         }),
-                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                        header: proto.Message.InteractiveMessage.Header.create({
                                             title: `Menu Tools`,
                                             hasMediaAttachment: true,
                                             imageMessage: XeonWlcm
@@ -11128,18 +11128,18 @@ else if (typemenu === 'v13') {
                                         })
                                     },
                                     {
-                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                        body: proto.Message.InteractiveMessage.Body.create({
                                             text: `By AraBotz`
                                         }),
-                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                        footer: proto.Message.InteractiveMessage.Footer.create({
                                             text: "menudownload"
                                         }),
-                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                        header: proto.Message.InteractiveMessage.Header.create({
                                             title: `Menu Download`,
                                             hasMediaAttachment: true,
                                             imageMessage: XeonWlcm
                                         }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
                                             buttons: [
                                                 {
                                                     name: "quick_reply",
@@ -11157,18 +11157,18 @@ else if (typemenu === 'v13') {
                                         })
                                     },
                                     {
-                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                        body: proto.Message.InteractiveMessage.Body.create({
                                             text: `By AraBotz`
                                         }),
-                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                        footer: proto.Message.InteractiveMessage.Footer.create({
                                             text: "menuconvert"
                                         }),
-                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                        header: proto.Message.InteractiveMessage.Header.create({
                                             title: `Menu Convert`,
                                             hasMediaAttachment: true,
                                             imageMessage: XeonWlcm
                                         }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
                                             buttons: [
                                                 {
                                                     name: "quick_reply",
@@ -11186,18 +11186,18 @@ else if (typemenu === 'v13') {
                                         })
                                     },
                                     {
-                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                        body: proto.Message.InteractiveMessage.Body.create({
                                             text: `By AraBotz`
                                         }),
-                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                        footer: proto.Message.InteractiveMessage.Footer.create({
                                             text: "menusticker"
                                         }),
-                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                        header: proto.Message.InteractiveMessage.Header.create({
                                             title: `Menu Sticker`,
                                             hasMediaAttachment: true,
                                             imageMessage: XeonWlcm
                                         }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
                                             buttons: [
                                                 {
                                                     name: "quick_reply",
@@ -11216,18 +11216,18 @@ else if (typemenu === 'v13') {
                                     },
                                     
                                     {
-                                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                                        body: proto.Message.InteractiveMessage.Body.create({
                                             text: `By AraBotz`
                                         }),
-                                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
+                                        footer: proto.Message.InteractiveMessage.Footer.create({
                                             text: "menuother"
                                         }),
-                                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                                        header: proto.Message.InteractiveMessage.Header.create({
                                             title: `Menu Other`,
                                             hasMediaAttachment: true,
                                             imageMessage: XeonWlcm
                                         }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
+                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
                                             buttons: [
                                                 {
                                                     name: "quick_reply",
