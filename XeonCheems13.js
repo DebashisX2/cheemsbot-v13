@@ -740,7 +740,7 @@ async function introduction ()
       participant: m.sender, 
       remoteJid: m.sender },
      message: {extendedTextMessage: 
-              { text: m}
+              { text: `Hi`}
     }}
     let user=m.sender
     let username =XeonBotInc.getName(user)
