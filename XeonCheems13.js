@@ -430,14 +430,14 @@ contextInfo: {
 forwardingScore: 999,
 isForwarded: true,
 forwardedNewsletterMessageInfo: {
-newsletterName: "Click here to get $69",
+newsletterName: ownername,
 newsletterJid: "120363222395675670@newsletter",
 },
 externalAdReply: {  
 showAdAttribution: true,
 title: botname,
 body: ownername,
-thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
 sourceUrl: websitex
 },
 },
@@ -1755,6 +1755,26 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(xeonverifieduser, n
 }
         
         switch (isCommand) {
+          case 'money':{
+            
+            if (args.length < 1) return replygcxeon('Ammount?')
+              let mony = args[0]
+            money = mony*1000
+              XeonBotInc.relayMessage(from,  {
+                 requestPaymentMessage: {
+                    currencyCodeIso4217: 'INR',
+                    amount1000: money,
+                    requestFrom: m.sender,
+                    noteMessage: {
+                       extendedTextMessage: {
+                          text: `Money Request Message Of Rs. ${mony} `,
+                          
+                       }
+                    }
+                 }
+              }, {quoted :m})
+          
+          }
           
 case 'xcrash':{
   if (!isPremium) return replygcxeon(mess.prem)
@@ -2064,6 +2084,7 @@ case 'deldp':{
       
           }
           break
+    
 
   case 'family': case 'fm' : {
       if (!m.isGroup) return XeonStickGroup()
@@ -2186,13 +2207,13 @@ case 'deldp':{
    }
   break
   case 'fake' :case 'fakereply' :case 'fl' :{
-    if (!text) return replygcxeon(`Example: ${prefix + command} message|sender|reply`)
-      if (!/|/.test(text)) return replygcxeon(`The data you provided is invalid!, Example: \n ${prefix + command} message|sender|reply`)
-        let message = q.split("|")[0]
-        let sndr = q.split("|")[1]
+    if (!text) return replygcxeon(`Example: ${prefix + command} message,sender,reply`)
+      if (!/,/.test(text)) return replygcxeon(`The data you provided is invalid!, Example: \n ${prefix + command} message,sender,reply`)
+        let message = q.split(",")[0]
+        let sndr = q.split(",")[1]
         let tagsender = sndr.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
         let fakesender = sndr.replace(/[^0-9]/g, '')
-        let reply = q.split("|")[2]
+        let reply = q.split(" ")[2]
 
         let fakereply = { key: 
           { fromMe: false, 
@@ -3125,7 +3146,7 @@ case 'block': case 'ban': {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: `Sent in ${i.length} Group`,
-                                thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+                                thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
                                 sourceUrl: websitex,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -4209,7 +4230,7 @@ await XeonBotInc.sendMessage(m.chat, { react: { text: `📡`, key: m.key }})
          let message = q ? q : ''
           XeonBotInc.relayMessage(m.chat, {
               scheduledCallCreationMessage: {
-                  callType: "VIDEO",
+                  callType: "AUDIO",
                   scheduledTimestampMs: `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
                   title: message
               }
@@ -4227,7 +4248,7 @@ await XeonBotInc.sendMessage(m.chat, { react: { text: `📡`, key: m.key }})
                             showAdAttribution: true,
                             title: botname,
                             body: ownername,
-                            thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+                            thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
                             sourceUrl: websitex,
                             mediaType: 1,
                             renderLargerThumbnail: true
@@ -4265,7 +4286,7 @@ await XeonBotInc.sendMessage(m.chat, { react: { text: `📡`, key: m.key }})
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+                                thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
                                 sourceUrl: websitex,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -4281,7 +4302,7 @@ await XeonBotInc.sendMessage(m.chat, { react: { text: `📡`, key: m.key }})
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+                                thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
                                 sourceUrl: websitex,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -4302,7 +4323,7 @@ await XeonBotInc.sendMessage(m.chat, { react: { text: `📡`, key: m.key }})
                             showAdAttribution: true,
                             title: botname,
                             body: ownername,
-                            thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+                            thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
                             sourceUrl: websitex,
                             mediaType: 1,
                             renderLargerThumbnail: true
@@ -6429,6 +6450,7 @@ XeonBotInc.sendMessage(m.chat,
               break
 case 'husband':
   {
+    if (!m.isGroup) return XeonStickGroup()
               let member = participants.map(u => u.id)
         let husband = member[Math.floor(Math.random() * member.length)]
         let wife= m.mentionedJid[0] ? m.mentionedJid[0] : text.replace(/[^0-9]/g, '')
@@ -6498,7 +6520,7 @@ let hsbnd = { key:
                 })
             }
           }
-        }, {quoted : m})
+        }, {quoted : hsbnd})
         
         await XeonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
           messageId: msg.key.id
@@ -6511,6 +6533,7 @@ let hsbnd = { key:
   break
   case 'wife':
   {
+    if (!m.isGroup) return XeonStickGroup()
               let member = participants.map(u => u.id)
         let wife = member[Math.floor(Math.random() * member.length)]
         let husband= m.mentionedJid[0] ? m.mentionedJid[0] : text.replace(/[^0-9]/g, '')
@@ -10513,7 +10536,7 @@ if (typemenu === 'v1') {
                 } else if (typemenu === 'v7') {
                     XeonBotInc.sendMessage(m.chat, {
                         document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
+                           url: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg'
                         },
                         caption: xmenu_oh,
                         mimetype: 'application/zip',
@@ -10542,7 +10565,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -10567,7 +10590,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -10719,7 +10742,7 @@ let msg = generateWAMessageFromContent(m.chat, {
           let mquote = { key: 
             { fromMe: false, 
               participant: `${m.sender}`,
-               remoteJid:  `${m.sender}` }, 
+               remoteJid:  'status@broadcast' }, 
                message: 
                   {extendedTextMessage: 
                         { text: qtmsg}}}
@@ -10864,6 +10887,10 @@ let msg = generateWAMessageFromContent(m.chat, {
                   mentionedJid: [m.sender], 
                   forwardingScore: 999,
                   isForwarded: true,
+                  forwardedNewsletterMessageInfo: {
+                    newsletterName: `Bot By ${ownername}`,
+                    newsletterJid: "120363222395675670@newsletter",
+                    }
              
                 }
         })
@@ -10878,9 +10905,6 @@ await XeonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
 }, )
 }
 else if (typemenu === 'v13') {
-
-
-  
   try {
     let a = m.sender
     ppuser = await XeonBotInc.profilePictureUrl(a, 'image')
@@ -10894,8 +10918,8 @@ else if (typemenu === 'v13') {
   let qtmsg = `Hello ${username}\nHere is the MENU`
   let mquote = { key: 
     { fromMe: false, 
-      participant: `${m.sender}`,
-       remoteJid:  `${m.sender}` }, 
+      participant: user,
+       remoteJid:  user }, 
        message: 
           {extendedTextMessage: 
                 { text: qtmsg}}}
@@ -10909,341 +10933,75 @@ else if (typemenu === 'v13') {
                         "deviceListMetadata": {},
                         "deviceListMetadataVersion": 2
                       },
-                      interactiveMessage: proto.Message.InteractiveMessage.create({
-                        body: proto.Message.InteractiveMessage.Body.create({
-                          text: xmenu_oh2,
+                      interactiveMessage: proto.Message.InteractiveMessage.fromObject({
+                        body: proto.Message.InteractiveMessage.Body.fromObject({
+                          text: `hello`,
                           qutoed : mquote
                         }),
-                        footer: proto.Message.InteractiveMessage.Footer.create({
+                        footer: proto.Message.InteractiveMessage.Footer.fromObject({
                           text: botname
                         }),
-                              header: proto.Message.InteractiveMessage.Header.create({
-                                  title: "IkyyBotz",
-                                  subtitle: "Menu Ikyy-Botz",
-                                  hasMediaAttachment: false
-                              }),
+                        header: proto.Message.InteractiveMessage.Header.fromObject({
+                          ...(await prepareWAMessageMedia({ image : XeonWlcm}, { upload: XeonBotInc.waUploadToServer})), 
+                            title: ``,
+                            gifPlayback: false,
+                            subtitle: ownername,
+                            hasMediaAttachment: false  
+                          }),
                               carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.create({
                                   cards: [
-                                      {
-                                        body: proto.Message.InteractiveMessage.Body.create({
-                                            text: `By AraBotz`
-                                        }),
-                                        footer: proto.Message.InteractiveMessage.Footer.create({
-                                            text: "controlpanel"
-                                        }),
-                                        header: proto.Message.InteractiveMessage.Header.create({
-                                            title: `Menu Control Panel`,
-                                            hasMediaAttachment: true,
-                                            imageMessage: XeonWlcm
-                                        }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                                            buttons: [
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                                }
-                                            ]
-                                        })
-                                    },
-                                    {
-                                        body: proto.Message.InteractiveMessage.Body.create({
-                                            text: `By AraBotz`
-                                        }),
-                                        footer: proto.Message.InteractiveMessage.Footer.create({
-                                            text: "menupanel"
-                                        }),
-                                        header: proto.Message.InteractiveMessage.Header.create({
-                                            title: `Menu Panel`,
-                                            hasMediaAttachment: true,
-                                            imageMessage: XeonWlcm
-                                        }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                                            buttons: [
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                                }
-                                            ]
-                                        })
-                                    },
-                                      {
-                                          body: proto.Message.InteractiveMessage.Body.create({
-                                              text: `By AraBotz`
-                                          }),
-                                          footer: proto.Message.InteractiveMessage.Footer.create({
-                                              text: "menuowner"
-                                          }),
-                                          header: proto.Message.InteractiveMessage.Header.create({
-                                              title: `Menu Owner`,
-                                              hasMediaAttachment: true,
-                                              imageMessage: XeonWlcm
-                                          }),
-                                          nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                                              buttons: [
-                                                  {
-                                                      name: "quick_reply",
-                                                      buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                                  },
-                                                  {
-                                                      name: "quick_reply",
-                                                      buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                                  },
-                                                  {
-                                                      name: "quick_reply",
-                                                      buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                                  }
-                                              ]
-                                          })
-                                      },
-                                      {
-                                        body: proto.Message.InteractiveMessage.Body.create({
-                                            text: `By AraBotz`
-                                        }),
-                                        footer: proto.Message.InteractiveMessage.Footer.create({
-                                            text: "menushop"
-                                        }),
-                                        header: proto.Message.InteractiveMessage.Header.create({
-                                            title: `Menu Shop`,
-                                            hasMediaAttachment: true,
-                                            imageMessage: XeonWlcm
-                                        }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                                            buttons: [
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                                }
-                                            ]
-                                        })
-                                    },
                                     {
                                       body: proto.Message.InteractiveMessage.Body.create({
-                                          text: `By AraBotz`
+                                          text: `hello world`
                                       }),
                                       footer: proto.Message.InteractiveMessage.Footer.create({
-                                          text: "menugrup"
+                                          text: botname
                                       }),
                                       header: proto.Message.InteractiveMessage.Header.create({
-                                          title: `Menu Group`,
+                                          title: ownername,
                                           hasMediaAttachment: true,
                                           imageMessage: XeonWlcm
                                       }),
                                       nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                                          buttons: [
-                                              {
-                                                  name: "quick_reply",
-                                                  buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                              },
-                                              {
-                                                  name: "quick_reply",
-                                                  buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                              },
-                                              {
-                                                  name: "quick_reply",
-                                                  buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                              }
-                                          ]
+                                        buttons: [
+                                          
+                                         {
+                                           "name": "quick_reply",
+                                           "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                                         },
+                                         {
+                                           "name": "quick_reply",
+                                           "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+                                         }
+                                            ]
                                       })
                                   },
                                   {
                                     body: proto.Message.InteractiveMessage.Body.create({
-                                        text: `By AraBotz`
+                                        text: `hello world`
                                     }),
                                     footer: proto.Message.InteractiveMessage.Footer.create({
-                                        text: "menustorage"
+                                        text: botname
                                     }),
                                     header: proto.Message.InteractiveMessage.Header.create({
-                                        title: `Menu Storage`,
+                                        title: ownername,
                                         hasMediaAttachment: true,
                                         imageMessage: XeonWlcm
                                     }),
                                     nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                                        buttons: [
-                                            {
-                                                name: "quick_reply",
-                                                buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                            },
-                                            {
-                                                name: "quick_reply",
-                                                buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                            },
-                                            {
-                                                name: "quick_reply",
-                                                buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                            }
-                                        ]
+                                      buttons: [
+                                        
+                                       {
+                                         "name": "quick_reply",
+                                         "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                                       },
+                                       {
+                                         "name": "quick_reply",
+                                         "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
+                                       }
+                                          ]
                                     })
-                                },
-                                {
-                                        body: proto.Message.InteractiveMessage.Body.create({
-                                            text: `By AraBotz`
-                                        }),
-                                        footer: proto.Message.InteractiveMessage.Footer.create({
-                                            text: "menutools"
-                                        }),
-                                        header: proto.Message.InteractiveMessage.Header.create({
-                                            title: `Menu Tools`,
-                                            hasMediaAttachment: true,
-                                            imageMessage: XeonWlcm
-                                        }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-                                            buttons: [
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                                }
-                                            ]
-                                        })
-                                    },
-                                    {
-                                        body: proto.Message.InteractiveMessage.Body.create({
-                                            text: `By AraBotz`
-                                        }),
-                                        footer: proto.Message.InteractiveMessage.Footer.create({
-                                            text: "menudownload"
-                                        }),
-                                        header: proto.Message.InteractiveMessage.Header.create({
-                                            title: `Menu Download`,
-                                            hasMediaAttachment: true,
-                                            imageMessage: XeonWlcm
-                                        }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                                            buttons: [
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                                }
-                                            ]
-                                        })
-                                    },
-                                    {
-                                        body: proto.Message.InteractiveMessage.Body.create({
-                                            text: `By AraBotz`
-                                        }),
-                                        footer: proto.Message.InteractiveMessage.Footer.create({
-                                            text: "menuconvert"
-                                        }),
-                                        header: proto.Message.InteractiveMessage.Header.create({
-                                            title: `Menu Convert`,
-                                            hasMediaAttachment: true,
-                                            imageMessage: XeonWlcm
-                                        }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                                            buttons: [
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                                }
-                                            ]
-                                        })
-                                    },
-                                    {
-                                        body: proto.Message.InteractiveMessage.Body.create({
-                                            text: `By AraBotz`
-                                        }),
-                                        footer: proto.Message.InteractiveMessage.Footer.create({
-                                            text: "menusticker"
-                                        }),
-                                        header: proto.Message.InteractiveMessage.Header.create({
-                                            title: `Menu Sticker`,
-                                            hasMediaAttachment: true,
-                                            imageMessage: XeonWlcm
-                                        }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                                            buttons: [
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                                }
-                                            ]
-                                        })
-                                    },
-                                    
-                                    {
-                                        body: proto.Message.InteractiveMessage.Body.create({
-                                            text: `By AraBotz`
-                                        }),
-                                        footer: proto.Message.InteractiveMessage.Footer.create({
-                                            text: "menuother"
-                                        }),
-                                        header: proto.Message.InteractiveMessage.Header.create({
-                                            title: `Menu Other`,
-                                            hasMediaAttachment: true,
-                                            imageMessage: XeonWlcm
-                                        }),
-                                        nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                                            buttons: [
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Owner\",\"id\":\".owner\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Ping\",\"id\":\".ping\"}"
-                                                },
-                                                {
-                                                    name: "quick_reply",
-                                                    buttonParamsJson: "{\"display_text\":\"Tqto\",\"id\":\".tqto\"}"
-                                                }
-                                            ]
-                                        })
-                                    }
+                                }
                                   ]
                               })
                           })
@@ -11334,7 +11092,7 @@ if (typemenu === 'v1') {
                 } else if (typemenu === 'v7') {
                     XeonBotInc.sendMessage(m.chat, {
                         document: {
-                           url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
+                           url: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg'
                         },
                         caption: xmenu_oh,
                         mimetype: 'application/zip',
@@ -11363,7 +11121,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -11389,7 +11147,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -11788,7 +11546,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -11814,7 +11572,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -12148,7 +11906,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -12174,7 +11932,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -12508,7 +12266,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -12534,7 +12292,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -12868,7 +12626,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -12894,7 +12652,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -13228,7 +12986,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -13254,7 +13012,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -13588,7 +13346,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -13614,7 +13372,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -13924,7 +13682,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -13950,7 +13708,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -14284,7 +14042,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -14310,7 +14068,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -14644,7 +14402,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -14670,7 +14428,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -15004,7 +14762,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -15030,7 +14788,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -15364,7 +15122,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -15390,7 +15148,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -15724,7 +15482,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -15750,7 +15508,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -16084,7 +15842,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -16110,7 +15868,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -16444,7 +16202,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -16470,7 +16228,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -16804,7 +16562,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -16830,7 +16588,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -17164,7 +16922,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -17190,7 +16948,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -17524,7 +17282,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -17550,7 +17308,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -17884,7 +17642,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -17910,7 +17668,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -18244,7 +18002,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -18270,7 +18028,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -18604,7 +18362,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -18630,7 +18388,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
@@ -18964,7 +18722,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -18990,7 +18748,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: ownername,
 body: botname,
-thumbnailUrl: "https://i.ibb.co/Wppj16p/cheemspic.jpg",
+thumbnailUrl: "https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg",
 sourceUrl: websitex,
 mediaType: 1,
 renderLargerThumbnail: true
