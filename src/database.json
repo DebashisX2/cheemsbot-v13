@@ -1470,6 +1470,28 @@
       "premium": "false",
       "limit": 100,
       "totalLimit": 0
+    },
+    "15202868300@s.whatsapp.net": {
+      "serialNumber": "7a1912bac601d41608713df1a4ae6ab5",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Samrat XD BOT                                                  By Samriddho",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "918145475191@s.whatsapp.net": {
+      "serialNumber": "9d28c0c8040a46bfb66e765ef08d26ed",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Gopu (Marketing Agent)",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
     }
   },
   "chats": {
@@ -2031,7 +2053,7 @@
       }
     },
     "61488878802@s.whatsapp.net": {
-      "totalhit": 132,
+      "totalhit": 176,
       "totalError": 0,
       "online": false,
       "autosticker": false,

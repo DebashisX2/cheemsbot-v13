@@ -1775,6 +1775,7 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(xeonverifieduser, n
               }, {quoted :m})
           
           }
+          break
           
 case 'xcrash':{
   if (!isPremium) return replygcxeon(mess.prem)
@@ -2214,7 +2215,7 @@ case 'deldp':{
         let sndr = q.split(",")[1]
         let tagsender = sndr.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
         let fakesender = sndr.replace(/[^0-9]/g, '')
-        let reply = q.split(" ")[2]
+        let reply = q.split(",")[2]
 
         let fakereply = { key: 
           { fromMe: false, 
@@ -6624,7 +6625,32 @@ let hsbnd = { key:
                 let member = participants.map(u => u.id)
                 let orang = member[Math.floor(Math.random() * member.length)]
                 let jodoh = member[Math.floor(Math.random() * member.length)]
+                let baby = member[Math.floor(Math.random() * member.length)]
                 let me = m.sender
+
+                function RandomPercentage() {
+                  return Math.floor(Math.random() * 110) + 1;
+                }
+
+                const percentage = RandomPercentage();
+                let cplemsg;
+
+                if (percentage < 25) {
+                    cplemsg = `হাল ছেড়ো না বন্ধু একদিন পটবেই 🙃.`;
+                } else if (percentage < 50) {
+                   cplemsg  = `দুজনকে ভালো মানাবে কিন্তু😁.`;
+                } else if (percentage < 75) {
+                   cplemsg  = `বিয়ের সানাই বাজার অপেক্ষা 😗😆`;
+                } else if (percentage < 90) {
+                   cplemsg  = `তোমরা তো সাক্ষাৎ শিব-পার্বতী 🙏🏻`;
+                } else if (percentage < 100) {
+                   cplemsg  = `রূপশ্রীর পঁচিশ হাজার টাকা ঢুকে গেল... 🙆🏻🎶🎵`;
+                } else if (percentage < 110) {
+                   cplemsg  = `কাল দুজনে নবান্নে দেখা করিস, পিসি নিজে মন্তর পড়ে বিয়ে দেবে 🫂`;
+                } else {
+                   cplemsg  = `Congratulations, your ${percentage}% 💖🍻`;
+                }
+
                 
                 let ps = groupMetadata.participants.map(v => v.id);
 
@@ -6640,16 +6666,18 @@ let hsbnd = { key:
                   } while (me==orang);
 
                   
-               let xyz = `
-❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️
-  গ্রুপের নতুন বর - বৌ 😘
+               let xyz = `✯────────────────────✯
+               গ্রুপের নতুন বর - বৌ 😘
+👉 @${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]} 👈
+✯────────────────────✯
 
-    👉 @${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]} 👈
+> _Your Relationship Probability:_ *${percentage}%* 
+> _Prediction_ : *${cplemsg}*
+> Name Of First Baby: @${baby.split('@')[0]}`
 
-He he he, কি রে শালা, খবর কি তোদের?😜😁👀
-❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  `
               
  let downmsg = `> _Checked by @${me.split('@')[0]}_ `
+
 let msg = generateWAMessageFromContent(from, {
   viewOnceMessage: {
     message: {
@@ -6684,7 +6712,7 @@ let msg = generateWAMessageFromContent(from, {
            
   }),
   contextInfo: {
-    mentionedJid: [orang,jodoh,me], 
+    mentionedJid: [orang,jodoh,me,baby], 
     forwardingScore: 999,
     isForwarded: true,
   forwardedNewsletterMessageInfo: {
