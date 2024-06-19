@@ -6462,10 +6462,38 @@ case 'husband':
           husband= ps[Math.floor(Math.random() * ps.length)]
           } while (husband==wife);
 
-        let mesg =`❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️\n 
-         @${wife.split('@')[0]}❤️ \nyour new husband is   👉 @${husband.split('@')[0]} 👈
+          function RandomPercentage() {
+            return Math.floor(Math.random() * 110) + 1;
+          }
 
-❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  `
+          const percentage = RandomPercentage();
+          let cplemsg;
+
+          if (percentage < 25) {
+              cplemsg = `হাল ছেড়ো না বন্ধু একদিন পটবেই 🙃.`;
+          } else if (percentage < 50) {
+             cplemsg  = `দুজনকে ভালো মানাবে কিন্তু😁.`;
+          } else if (percentage < 75) {
+             cplemsg  = `বিয়ের সানাই বাজার অপেক্ষা 😗😆`;
+          } else if (percentage < 90) {
+             cplemsg  = `তোমরা তো সাক্ষাৎ শিব-পার্বতী 🙏🏻`;
+          } else if (percentage < 100) {
+             cplemsg  = `রূপশ্রীর পঁচিশ হাজার টাকা ঢুকে গেল... 🙆🏻🎶🎵`;
+          } else if (percentage < 110) {
+             cplemsg  = `কাল দুজনে নবান্নে দেখা করিস, পিসি নিজে মন্তর পড়ে বিয়ে দেবে 🫂`;
+          } else {
+             cplemsg  = `Congratulations, your ${percentage}% 💖🍻`;
+          }
+
+        let mesg =` 
+        ⚔️ᴄʜᴇᴇᴍs ʙᴏᴛ ʜᴜsʙᴀɴᴅ ᴘʀᴇᴅɪᴄᴛᴏʀ⚔️
+
+✯──────────✯──────────✯
+@${wife.split('@')[0]}❤️ \n     your new husband is   👉 @${husband.split('@')[0]} 👈
+✯──────────✯──────────✯
+
+> _ʏᴏᴜʀ ʀᴇʟᴀᴛɪᴏɴsʜɪᴘ ᴘʀᴏʙᴀʙɪʟɪᴛʏ:_ *${percentage}%* 
+> _ᴘʀᴇᴅɪᴄᴛɪᴏɴ_ : *${cplemsg}*`
 let tagwife = wife.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
 
 let hsbnd = { key: 
@@ -6488,7 +6516,7 @@ let hsbnd = { key:
                     text: mesg,
                   }),
                   footer: proto.Message.InteractiveMessage.Footer.create({
-                    text: botname
+                    text: `\n ${ownername}`
                   }),
                   header: proto.Message.InteractiveMessage.Header.create({
                         
@@ -6517,6 +6545,11 @@ let hsbnd = { key:
                           mentionedJid: [husband,tagwife], 
                           forwardingScore: 999,
                           isForwarded: true,
+                          forwardedNewsletterMessageInfo: {
+                            newsletterJid: '120363222395675670@newsletter',
+                            newsletterName: ownername,
+                            serverMessageId: 143
+                          }
                      
                         }
                 })
@@ -6544,11 +6577,41 @@ let hsbnd = { key:
         do {
           wife= ps[Math.floor(Math.random() * ps.length)]
           } while (husband==wife);
+          function RandomPercentage() {
+            return Math.floor(Math.random() * 110) + 1;
+          }
+          
+          const percentage = RandomPercentage();
+          let cplemsg;
+          
+          if (percentage < 25) {
+              cplemsg = `হাল ছেড়ো না বন্ধু একদিন পটবেই 🙃.`;
+          } else if (percentage < 50) {
+             cplemsg  = `দুজনকে ভালো মানাবে কিন্তু😁.`;
+          } else if (percentage < 75) {
+             cplemsg  = `বিয়ের সানাই বাজার অপেক্ষা 😗😆`;
+          } else if (percentage < 90) {
+             cplemsg  = `তোমরা তো সাক্ষাৎ শিব-পার্বতী 🙏🏻`;
+          } else if (percentage < 100) {
+             cplemsg  = `রূপশ্রীর পঁচিশ হাজার টাকা ঢুকে গেল... 🙆🏻🎶🎵`;
+          } else if (percentage < 110) {
+             cplemsg  = `কাল দুজনে নবান্নে দেখা করিস, পিসি নিজে মন্তর পড়ে বিয়ে দেবে 🫂`;
+          } else {
+             cplemsg  = `Congratulations, your ${percentage}% 💖🍻`;
+          }
+          
 
-        let mesg =`❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️\n 
-         @${husband.split('@')[0]}❤️ \nyour new wife is   👉 @${wife.split('@')[0]} 👈
+        let mesg =`
+                ⚔️ᴄʜᴇᴇᴍs ʙᴏᴛ ᴡɪғᴇ ᴘʀᴇᴅɪᴄᴛᴏʀ⚔️
 
-❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  ❤️  `
+✯───────────✯───────────✯
+@${husband.split('@')[0]}❤️ \n     your new wife is   👉 @${wife.split('@')[0]} 👈
+✯───────────✯───────────✯
+
+> _ʏᴏᴜʀ ʀᴇʟᴀᴛɪᴏɴsʜɪᴘ ᴘʀᴏʙᴀʙɪʟɪᴛʏ:_ *${percentage}%* 
+> _ᴘʀᴇᴅɪᴄᴛɪᴏɴ_ : *${cplemsg}*`
+
+
 let taghusband = husband.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
 
 let hsbnd = { key: 
@@ -6572,8 +6635,7 @@ let hsbnd = { key:
                     text: mesg
                   }),
                   footer: proto.Message.InteractiveMessage.Footer.create({
-                    text: botname
-                  }),
+                    text: `\n ${ownername}`                }),
                   header: proto.Message.InteractiveMessage.Header.create({
                         
                           title: ``,
@@ -6600,6 +6662,11 @@ let hsbnd = { key:
                           mentionedJid: [wife,taghusband], 
                           forwardingScore: 999,
                           isForwarded: true,
+                          forwardedNewsletterMessageInfo: {
+                            newsletterJid: '120363222395675670@newsletter',
+                            newsletterName: ownername,
+                            serverMessageId: 143
+                          }
                      
                         }
                 })
@@ -6666,13 +6733,15 @@ let hsbnd = { key:
                   } while (me==orang);
 
                   
-               let xyz = `✯────────────────────✯
+               let xyz = `
+               
+               ✯─────────✯─────────✯
                গ্রুপের নতুন বর - বৌ 😘
 👉 @${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]} 👈
-✯────────────────────✯
+✯─────────✯─────────✯
 
-> _Your Relationship Probability:_ *${percentage}%* 
-> _Prediction_ : *${cplemsg}*
+> _ʏᴏᴜʀ ʀᴇʟᴀᴛɪᴏɴsʜɪᴘ ᴘʀᴏʙᴀʙɪʟɪᴛʏ:_ *${percentage}%* 
+> _ᴘʀᴇᴅɪᴄᴛɪᴏɴ_ : *${cplemsg}*
 > Name Of First Baby: @${baby.split('@')[0]}`
 
               
