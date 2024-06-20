@@ -226,7 +226,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, msg, chatUpdate, store) => {
 );
         var budy = (typeof m.text == 'string' ? m.text : '')
         //prefix 1
-        var prefix = ['.', '/'] ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : xprefix
+        var prefix = ['.', '/',''] ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : xprefix
         const isCmd = body.startsWith(prefix)
         //prefix2 and command2 particulary for auto download
         const prefix2 = /^[°•π÷×¶∆£¢€¥®™✓_=|~!?#$%^&.+-,\/\\©^]/.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™✓_=|~!?#$%^&.+-,\/\\©^]/gi) : '.'
@@ -462,7 +462,7 @@ quoted: m,
                      "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", 
                      "fileLength": "28777",
                      "height": 1080,
-                     "width": 1079,
+                     "width": 1080,
                      "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=",
                      "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=",
                      "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69",
@@ -2241,6 +2241,128 @@ case 'deldp':{
       )
 
   }
+    break
+    
+    case 'fakepay':{
+      if (!text) return replygcxeon(`Example: ${prefix + command} requester,ammount,reaction`)
+        if (!/,/.test(text)) return replygcxeon(`The data you provided is invalid!, Example: \n ${prefix + command} requester,ammount,requested from,reaction`)
+          
+          let requester = q.split(",")[0]
+          let tagrequester = requester.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+
+          let ammount = q.split(",")[1]
+          let trueammount = ammount.replace(/[^0-9]/g, '')
+          let realammount = trueammount*1000
+
+          
+
+          let replymsg = q.split(",")[2]
+          let tagtext = `Payment Request Message of Rs. ${trueammount}`
+
+      
+  
+          let fpay = { 
+            key: 
+            { 
+               remoteJid: tagrequester, 
+               fromMe: false, 
+               id:global.botname, 
+               participant: tagrequester}, 
+               message: { requestPaymentMessage: 
+                           { currencyCodeIso4217: "INR", 
+                           amount1000: realammount, 
+                           requestFrom: tagrequester, 
+                           noteMessage: { 
+                              extendedTextMessage: { 
+                                 text: tagtext
+                                
+                                 }
+                              }, 
+                                 expiryTimestamp: 999999999, 
+                                 amount: { value: 91929291929, 
+                                 offset: 1000, 
+                                 currencyCode: "USD"
+                                          }
+                              }
+                        }
+                  }
+          let key = {}
+          try {
+            key.remoteJid = m.quoted ? m.quoted.fakeObj.key.remoteJid : m.key.remoteJid
+           key.fromMe = m.quoted ? m.quoted.fakeObj.key.fromMe : m.key.fromMe
+           key.id = m.quoted ? m.quoted.fakeObj.key.id : m.key.id
+            key.participant = m.quoted ? m.quoted.fakeObj.participant : m.key.participant
+          } catch (e) {
+            console.error(e)
+          }
+          
+          XeonBotInc.sendMessage(m.chat, {
+            text: replymsg,
+            mentionedJid: [tagrequester],
+          },{quoted:fpay},
+        )
+  
+    }
+    break
+    case 'fakevn': case 'fvn':{
+      if (!text) return replygcxeon(`Example: ${prefix + command} sender,time in second,reply`)
+        if (!/,/.test(text)) return replygcxeon(`The data you provided is invalid!, Example: \n ${prefix + command}  sender,time,reply `)
+          
+          let sender = q.split(",")[0]
+          let tagsender = sender.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+
+          let vntime = q.split(",")[1]
+          let reply = q.split(",")[2]
+      let fvn = 
+      {key: 
+      {participant: tagsender, 
+      ...(m.chat ? 
+        { remoteJid: tagsender } : {})},
+      message: { "audioMessage": 
+      {"mimetype":"audio/ogg; codecs=opus",
+      "seconds":vntime,
+      "ptt": 
+      "true"}
+      } 
+      } 
+      let key = {}
+      try {
+        key.remoteJid = m.quoted ? m.quoted.fakeObj.key.remoteJid : m.key.remoteJid
+       key.fromMe = m.quoted ? m.quoted.fakeObj.key.fromMe : m.key.fromMe
+       key.id = m.quoted ? m.quoted.fakeObj.key.id : m.key.id
+        key.participant = m.quoted ? m.quoted.fakeObj.participant : m.key.participant
+      } catch (e) {
+        console.error(e)
+      }
+      
+      XeonBotInc.sendMessage(m.chat, { delete: key })
+      XeonBotInc.sendMessage(m.chat, {
+        text: reply,
+      },{quoted:fvn},
+    )
+
+
+    }
+    break
+    case 'fakevid':{
+      const fvideo = 
+      {key: 
+      { fromMe: false,
+      participant: `0@s.whatsapp.net`,
+       ...(m.chat ? { remoteJid: "status@broadcast" } : {}) },
+       message: { "videoMessage": 
+       { "title":botname, 
+       "h": wm,'seconds': '359996400', 'caption': `${pushname}`, 
+       'jpegThumbnail': thumb}
+       }
+       }
+       let reply = 'hello world'
+
+       XeonBotInc.sendMessage(m.chat, {
+        text: reply,
+      },{quoted:fvn},
+    )
+    }
     break
     case 'r':{
       let sr = '919734020655@s.whatsapp.net'
