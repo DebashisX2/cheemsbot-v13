@@ -19,6 +19,7 @@ global.igprofile = 'https://www.instagram.com/debashis_x1/'
 global.gitprof = 'https://github.com/DebashisX2/'
 global.tg = 'https://t.me/Debashis_005'
 global.walink = 'https://wa.me/qr/ZPZ7Z6WYJ752O1'
+global.thumbimage_url = 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg'
 //new
 global.botname = '꧁﴿»✥«·-𝕯𝕯 𝕮𝖍𝖊𝖊𝖒𝖘-𝕭𝖔𝖙-·»✥«﴾꧂' //ur bot name
 global.ownernumber = '61488878802' //ur owner number

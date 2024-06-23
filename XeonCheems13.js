@@ -1,5 +1,5 @@
 //base by DGXeon
-//re-upload? recode? copy code? give credit ya :)
+//re-upload? recode? copy code? give credit ya :
 //YouTube: @DGXeon
 //Instagram: unicorn_xeon13
 //Telegram: t.me/xeonbotinc
@@ -234,7 +234,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, msg, chatUpdate, store) => {
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
         const full_args = body.replace(command, '').slice(1).trim()
-        const pushname = m.pushName || "No Name"
+        const pushname = m.pushName || "D.DEY"
         const botNumber = await XeonBotInc.decodeJid(XeonBotInc.user.id)
         const sender = m.sender
         const text = q = args.join(" ")
@@ -312,6 +312,10 @@ module.exports = XeonBotInc = async (XeonBotInc, m, msg, chatUpdate, store) => {
         XeonBotInc.sendMessage(from, { sticker: XeonStikRep }, { quoted: m })
         }
  
+        //profile images
+        const {fbimg} = fs.readFileSync('./XeonMedia/fbimg.jpg')
+        const {igimg} = fs.readFileSync('./XeonMedia/igimg.jpg')
+
  //bug functions
 const xbug2 = {
 key: {
@@ -437,7 +441,7 @@ externalAdReply: {
 showAdAttribution: true,
 title: botname,
 body: ownername,
-thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+thumbnailUrl: thumbimage_url,
 sourceUrl: websitex
 },
 },
@@ -1879,21 +1883,6 @@ case 'deldp':{
   case 'emojies':
       await rxns()
       break
-      case 'intro': case 'hi' : case 'hello':
-			 if (!XeonTheCreator) return XeonStickOwner()
-              let Intro = { key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: 'status@broadcast' }, message: { contactMessage: { displayName: `DEBASHIS DEY \n INTRODUCING »✥«·-𝕯𝕯 𝕮𝖍𝖊𝖊𝖒𝖘-𝕭𝖔𝖙-·»✥«`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:'CHEEMS-BOT'\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
-
-          await introduction()
-          XeonBotInc.sendMessage(from, {
-              contacts: {
-                  displayName: `${list.length} Contact`,
-                  contacts: list
-              }
-          }, {
-              quoted: Intro
-          })
-
-          break
       case 'teddy':
           await teddy()
           break
@@ -1962,10 +1951,10 @@ case 'deldp':{
                     showAdAttribution: true,
                     title: botname,
                     body: ownername,
-                    thumbnail: XeonWlcm,
+                    thumbnail: fbimg,
                     sourceUrl: face,
                     mediaType: 1,
-                    renderLargerThumbnail: true
+                    renderLargerThumbnail: false
 
                 }}}, {
                     quoted: fbprof
@@ -1999,7 +1988,7 @@ case 'deldp':{
                     showAdAttribution: true,
                     title: botname,
                     body: ownername,
-                    thumbnail: XeonWlcm,
+                    thumbnail: igimg,
                     sourceUrl: myig,
                     mediaType: 1,
                     renderLargerThumbnail: true
@@ -2048,7 +2037,7 @@ case 'deldp':{
       
           }
           break
-          case 'mytelegram':{ 
+          case 'mytelegram': case 'mytg':{ 
             
             let tgprof = { key: 
               { fromMe: false, 
@@ -2074,10 +2063,10 @@ case 'deldp':{
                     showAdAttribution: true,
                     title: botname,
                     body: ownername,
-                    thumbnail: XeonWlcm,
+                    thumbnail: fbimg,
                     sourceUrl: mytelegram,
                     mediaType: 2,
-                    renderLargerThumbnail: true
+                    renderLargerThumbnail: false
 
                 }}}, {
                     quoted: m
@@ -2086,6 +2075,11 @@ case 'deldp':{
       
           }
           break
+          case 'vcard':
+            {
+              
+            }
+            break
     case 'fakedoc' :
       {
         if (!text) return replygcxeon(`Example: ${prefix + command} docname, size`)
@@ -2114,7 +2108,7 @@ case 'deldp':{
         XeonBotInc.sendMessage(m.chat, {
           
         document: {
-          url: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg'
+          url: thumbimage_url
        },
           
           mimetype: 'application/zip',
@@ -3307,7 +3301,7 @@ case 'block': case 'ban': {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: `Sent in ${i.length} Group`,
-                                thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+                                thumbnailUrl: thumbimage_url,
                                 sourceUrl: websitex,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -3878,8 +3872,9 @@ XeonBotInc.sendMessage(m.chat, {
 require('fs').unlinkSync(nmfilect)
 }
 break
-case 'sendcontact': case 'sencontact': {
+case 'sendcontact': case 'sencontact': case 'vcard':{
 if (!m.isGroup) return XeonStickGroup()
+  
 if (!m.mentionedJid[0]) return replygcxeon('\nUse like this\n Example:.sendcontact @tag|name')
 let snTak = text.split(' ')[1] ? text.split(' ')[1] : 'Contact'
 let snContact = {
@@ -4409,7 +4404,7 @@ await XeonBotInc.sendMessage(m.chat, { react: { text: `📡`, key: m.key }})
                             showAdAttribution: true,
                             title: botname,
                             body: ownername,
-                            thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+                            thumbnailUrl: thumbimage_url,
                             sourceUrl: websitex,
                             mediaType: 1,
                             renderLargerThumbnail: true
@@ -4447,7 +4442,7 @@ await XeonBotInc.sendMessage(m.chat, { react: { text: `📡`, key: m.key }})
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+                                thumbnailUrl: thumbimage_url,
                                 sourceUrl: websitex,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -4463,7 +4458,7 @@ await XeonBotInc.sendMessage(m.chat, { react: { text: `📡`, key: m.key }})
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+                                thumbnailUrl: thumbimage_url,
                                 sourceUrl: websitex,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -4484,7 +4479,7 @@ await XeonBotInc.sendMessage(m.chat, { react: { text: `📡`, key: m.key }})
                             showAdAttribution: true,
                             title: botname,
                             body: ownername,
-                            thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+                            thumbnailUrl: thumbimage_url,
                             sourceUrl: websitex,
                             mediaType: 1,
                             renderLargerThumbnail: true
@@ -10793,7 +10788,7 @@ if (typemenu === 'v1') {
                 } else if (typemenu === 'v7') {
                     XeonBotInc.sendMessage(m.chat, {
                       document: {
-                        url: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg'
+                        url: thumbimage_url
                      },
                         caption: xmenu_oh,
                         mimetype: 'application/zip',
@@ -10822,7 +10817,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -11349,7 +11344,7 @@ if (typemenu === 'v1') {
                 } else if (typemenu === 'v7') {
                     XeonBotInc.sendMessage(m.chat, {
                         document: {
-                           url: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg'
+                           url: thumbimage_url
                         },
                         caption: xmenu_oh,
                         mimetype: 'application/zip',
@@ -11378,7 +11373,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -11803,7 +11798,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -12163,7 +12158,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -12523,7 +12518,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -12883,7 +12878,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -13243,7 +13238,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -13603,7 +13598,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -13939,7 +13934,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -14299,7 +14294,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -14659,7 +14654,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -15019,7 +15014,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -15379,7 +15374,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -15739,7 +15734,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -16099,7 +16094,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -16459,7 +16454,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -16819,7 +16814,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -17179,7 +17174,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -17539,7 +17534,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -17899,7 +17894,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -18259,7 +18254,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -18619,7 +18614,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -18979,7 +18974,7 @@ if (typemenu === 'v1') {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg',
+      thumbnailUrl: thumbimage_url,
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
