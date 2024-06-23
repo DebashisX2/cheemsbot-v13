@@ -1,12 +1,4 @@
 {
-  "sticker": {},
-  "database": {},
-  "game": {
-    "math": []
-  },
-  "others": {
-    "vote": []
-  },
   "users": {
     "919366316018@s.whatsapp.net": {
       "serialNumber": "5748ef2731f9b0ab993964d915670166",
@@ -1588,7 +1580,7 @@
       "badword": 0,
       "afkReason": "",
       "nick": "M. S",
-      "premium": "false",
+      "premium": false,
       "limit": 100,
       "totalLimit": 0
     },
@@ -1789,8 +1781,108 @@
       "premium": "false",
       "limit": 100,
       "totalLimit": 0
+    },
+    "918388994745@s.whatsapp.net": {
+      "serialNumber": "c13fbebad094336228bd9ef5583cb780",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Neha 👀✨",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919382613861@s.whatsapp.net": {
+      "serialNumber": "19f85335eef01561925dd1f6595ae180",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "⎯꯭̽🦚 ⃢⃝❥︎̶꯭꯭᪳𝘼𝙏𝘼𝙉𝙐⎯꯭̽❤️‍🩹᪳𓂃",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917365878190@s.whatsapp.net": {
+      "serialNumber": "495e910582c9dd2f97337cc3eb33b13c",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "꧁ঔৣ☬✞ßîttû✞☬ঔৣ꧂",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919674694660@s.whatsapp.net": {
+      "serialNumber": "c596ca1405c469c856e92bc64418cc67",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "•ꈤ𝖆ꪗ𝖆𝚗❤️💦•",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "917478491940@s.whatsapp.net": {
+      "serialNumber": "15f682f87ef100d87a7542340e32b622",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "A N I",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "918509959262@s.whatsapp.net": {
+      "serialNumber": "930e475890f5b76d9f664d2c900d1dce",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "𝚁𝚘𝚗𝚒 𝚂𝚊𝚛𝚔𝚊𝚛",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "919609002253@s.whatsapp.net": {
+      "serialNumber": "46ccbe5e0c30db238ed46178a60131e5",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Soumyajit Ghosh",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "916294807107@s.whatsapp.net": {
+      "serialNumber": "3a3645af7ec5365d8c5cfec6fc96c776",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "彡  ꔪ☆ꜱᴜᴅɪᴘ☆࿐  彡 827",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "916296318140@s.whatsapp.net": {
+      "serialNumber": "3624dce22fa8e0192994b4790235097c",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "ᴍʀܔ𝑹𝒐𝒄𝒌𝒚 𝑮𝒐𝒓𝒂𝒊 💖",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
     }
   },
+  "database": {},
   "chats": {
     "120363047626537933@g.us": {
       "badword": false,
@@ -2231,7 +2323,30 @@
       "antilink": false,
       "antipromotion": false,
       "antilinkgc": false
+    },
+    "120363138313685754@g.us": {
+      "badword": false,
+      "antiforeignnum": false,
+      "antibot": false,
+      "antiviewonce": true,
+      "antispam": false,
+      "antivirtex": false,
+      "antimedia": false,
+      "antiimage": false,
+      "antivideo": false,
+      "antiaudio": false,
+      "antipoll": false,
+      "antisticker": false,
+      "antilocation": false,
+      "antidocument": false,
+      "anticontact": false,
+      "antilink": false,
+      "antipromotion": false,
+      "antilinkgc": false
     }
+  },
+  "game": {
+    "math": []
   },
   "settings": {
     "919366316018@s.whatsapp.net": {
@@ -2390,7 +2505,7 @@
       }
     },
     "61488878802@s.whatsapp.net": {
-      "totalhit": 450,
+      "totalhit": 633,
       "totalError": 0,
       "online": false,
       "autosticker": false,
@@ -2421,5 +2536,9 @@
       }
     }
   },
-  "message": {}
+  "message": {},
+  "sticker": {},
+  "others": {
+    "vote": []
+  }
 }
